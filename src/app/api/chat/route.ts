@@ -1,4 +1,4 @@
-import { streamText } from 'ai';
+import { GoogleGenerativeAIStream, Message, StreamingTextResponse } from 'ai';
 import { aiModel, javaSystemPrompt } from '@/lib/ai';
 
 export const runtime = 'edge'
@@ -7,18 +7,21 @@ export async function POST(req: Request) {
   try {
     const { messages } = await req.json()
 
-    const lastMessage = messages[messages.length - 1]
-    console.log('🔍 User asked:', lastMessage?.content?.slice(0, 100) + '...');
+    const geminiMessages = messages.map((message: Message) => ({
+      role: message.role === 'user' ? 'user' : 'model',
+      parts: [{ text: message.content }],
+    }));
 
-    const result = streamText({
-      model: aiModel,
-      system: javaSystemPrompt,
-      messages,
-      // maxTokens: 1000,
-      temperature: 0.7,
-    })
+    const response = await aiModel.generateContentStream({
+      contents: geminiMessages,
+      systemInstruction: javaSystemPrompt,
+      generationConfig: {
+        temperature: 0.7,
+      },
+    });
 
-   return result.toTextStreamResponse();
+    const stream = GoogleGenerativeAIStream(response);
+    return new StreamingTextResponse(stream)
   } catch (error) {
     console.error('Chat API error:', error);
     
