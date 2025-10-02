@@ -8,8 +8,8 @@ export function MessageBubble({message}: MessageBubbleProps) {
   const blocks = extractCodeBlocks(message.content)
 
   return (
-    <article className={`flex ${isUser ? 'justify-end' : 'justify-start'} mb-6`}>
-      <div className={`flex max-w-4xl ${isUser ? 'flex-row-reverse' : 'flex-row'}`}>
+    <article className={`flex ${isUser ? 'justify-end' : 'justify-start'} mb-6 w-full`}>
+      <div className={`flex max-w-3xl w-full ${isUser ? 'flex-row-reverse' : 'flex-row'}`}>
         {/* Avatar */}
         <figure className={`flex-shrink-0 ${isUser ? 'ml-3' : 'mr-3'}`}>
           <div className={`w-8 h-8 rounded-full flex items-center justify-center ${
