@@ -5,7 +5,7 @@ export interface CodeBlockProps {
 
 interface ChatMessage {
   id: string,
-  role: 'user' | 'assistant' | 'system';
+  role: 'user' | 'assistant' | 'system' | 'function' | 'data' | 'tool';
   content: string
 }
 
