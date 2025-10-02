@@ -10,7 +10,7 @@ const Input = React.forwardRef<HTMLInputElement,React.InputHTMLAttributes<HTMLIn
           
           "file:border-0 file:bg-transparent file:text-sm file:font-medium",
           
-          "placeholder:text-gray-500",
+          "placeholder:text-black",
           
           "focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-orange-400 focus-visible:border-orange-400",
           
