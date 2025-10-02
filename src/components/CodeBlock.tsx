@@ -19,7 +19,7 @@ export function CodeBlock({code, language = 'java'}: CodeBlockProps) {
   }
 
   return (
-    <figure className="relative bg-gray-900 rounded-lg overflow-hidden my-4 border">
+    <figure className="relative bg-gray-900 rounded-lg overflow-hidden my-4 border border-gray-700 w-full max-w-full">
       <header className="flex items-center justify-between px-4 py-2 bg-gray-800 border-b border-gray-700">
         <figcaption className="flex items-center space-x-2">
           <Code className="h-4 w-4 text-gray-400" />
