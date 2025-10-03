@@ -1,6 +1,7 @@
 import { User, Coffee } from 'lucide-react';
 import { CodeBlock } from './CodeBlock';
 import { extractCodeBlocks } from '@/lib/utils';
+import { parseMarkdown } from '@/lib/markdown';
 import { MessageBubbleProps } from './types';
 
 export function MessageBubble({message}: MessageBubbleProps) {
@@ -8,8 +9,8 @@ export function MessageBubble({message}: MessageBubbleProps) {
   const blocks = extractCodeBlocks(message.content)
 
   return (
-    <article className={`flex ${isUser ? 'justify-end' : 'justify-start'} mb-6 w-full`}>
-      <div className={`flex max-w-3xl w-full ${isUser ? 'flex-row-reverse' : 'flex-row'}`}>
+    <article className={`flex ${isUser ? 'justify-end' : 'justify-start'} mb-6`}>
+      <div className={`flex max-w-3xl ${isUser ? 'flex-row-reverse' : 'flex-row'}`}>
         {/* Avatar */}
         <figure className={`flex-shrink-0 ${isUser ? 'ml-3' : 'mr-3'}`}>
           <div className={`w-8 h-8 rounded-full flex items-center justify-center ${
@@ -39,21 +40,27 @@ export function MessageBubble({message}: MessageBubbleProps) {
                     code={block.content}
                     language={block.language}
                   />
-                ) : (
-                  <p key={index} className={`whitespace-pre-wrap leading-relaxed ${
-                    isUser ? 'text-white' : 'text-gray-800'
-                  } ${index > 0 ? 'mt-3' : ''}`}>
+                ) : isUser ? (
+                  <p key={index} className={`whitespace-pre-wrap leading-snug text-white ${index > 0 ? 'mt-2' : ''}`}>
                     {block.content}
                   </p>
+                ) : (
+                  <div key={index} className={`space-y-1 ${index > 0 ? 'mt-2' : ''}`}>
+                    {parseMarkdown(block.content)}
+                  </div>
                 )
               ))}
             </>
           ) : (
-            <p className={`whitespace-pre-wrap leading-relaxed ${
-              isUser ? 'text-white' : 'text-gray-800'
-            }`}>
-              {message.content}
-            </p>
+            isUser ? (
+              <p className="whitespace-pre-wrap leading-snug text-white">
+                {message.content}
+              </p>
+            ) : (
+              <div className="space-y-1">
+                {parseMarkdown(message.content)}
+              </div>
+            )
           )}
         </section>
       </div>
