@@ -1,6 +1,6 @@
-import * as cheerio from 'cheerio'
-import type { Element } from 'domhandler'
-import { JavaDocumentation, JavaMethod, JavaField } from './types'
+import * as cheerio from "cheerio"
+import type { Element } from "domhandler"
+import { JavaDocumentation, JavaMethod, JavaField } from "./types"
 
 export class JavaDocsScraper {
   private baseUrl = 'https://docs.oracle.com/en/java/javase/17/docs/api'
@@ -185,8 +185,8 @@ export class JavaDocsScraper {
 
     const fieldRows = $container.find('.col-second').not('.table-header')
 
-    fieldRows.each((_, elem) => {
-      const $nameCell = $(elem)
+    fieldRows.each((_, element) => {
+      const $nameCell = $(element)
 
       const $typeCell = $nameCell.prev('.col-first')
 
@@ -233,14 +233,14 @@ export class JavaDocsScraper {
   private extractModifiers(signature: string): string[] {
     const modifiers: string[] = []
     const keywords = ['public', 'private', 'protected', 'static', 'final', 'abstract', 'synchronized']
-    
+
     const lowerSig = signature.toLowerCase()
-    keywords.forEach(keyword => {
+    for (const keyword of keywords) {
       if (lowerSig.includes(keyword)) {
         modifiers.push(keyword)
       }
-    })
-    
+    }
+
     return modifiers
   }
   
