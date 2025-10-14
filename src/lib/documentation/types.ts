@@ -10,8 +10,7 @@ export interface JavaMethod {
   description: string;
   parameters: JavaParameter[];
   returnType: string;
-  modifiers: string []
-
+  modifiers: string[]
 }
 
 export interface JavaField {
@@ -31,4 +30,11 @@ export interface JavaDocumentation {
   examples: string[];
   officialUrl: string;
   scrapedAt: Date
+}
+
+export interface SearchResult {
+  documentation: JavaDocumentation;
+  relevanceScore: number;
+  matchedMethods: JavaMethod[];
+  matchReason: string
 }
