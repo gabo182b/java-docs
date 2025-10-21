@@ -168,7 +168,21 @@ export async function initializeSearch(docsPath?: string): Promise<Documentation
       const path = await import('path')
 
       const filePath = docsPath || path.join(process.cwd(), 'data', 'java-docs.json')
+
+      try {
+        await fs.access(filePath)
+      } catch {
+        console.log('Documentation file not found, the chat will work without documentation context')
+        return search
+      }
+
       const data = await fs.readFile(filePath, 'utf-8')
+
+      if (!data || data.trim().length === 0) {
+        console.log('Documentation file is empty, the chat will work without documentation context')
+        return search
+      }
+
       const docs = JSON.parse(data) as JavaDocumentation[]
 
       search.loadDocumentation(docs)
@@ -176,6 +190,7 @@ export async function initializeSearch(docsPath?: string): Promise<Documentation
     }
   } catch (error) {
     console.error('Failed to initialize search:', error)
+    return search
   }
 
   return search
