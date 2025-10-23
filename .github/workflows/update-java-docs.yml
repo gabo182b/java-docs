@@ -1,0 +1,64 @@
+name: Update Java Documentation
+
+on:
+  #Run every sunday at 2 am
+  schedule:
+    - cron: "0 2 * * 0"
+
+  #Allow Manual trigger from Github UI
+  workflow_dispatch:
+
+  # Run on push to develop branch
+  push:
+    branches:
+      - develop
+
+permissions:
+  contents: write
+
+jobs:
+  scrape-and-Update:
+    runs-on: ubuntu-latest
+    steps:
+      # #1 - Checkout the repository
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # #2 - Setup Bun
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: latest
+
+      # #3 - Install dependencies
+      - name: Install dependencies
+        run: bun install
+
+      # #4 - Run the scraper
+      - name: Scrape Java Documentation
+        run: bun run scripts/scrapeDocs.ts
+
+      # #5 - Check if there is any changes
+      - name: Check for changes
+        id: git-check
+        run: |
+          git diff --exit-code data/java-docs.json || echo 'changed=true' >> $GITHUB_OUTPUT
+
+      # #6 - Commit and push if there are changes
+      - name: Commit and push changes
+        if: steps.git-check.outputs.changed == 'true'
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add data/java-docs.json
+          git commit -m "chore: update Java documentation [automated]"
+          git push
+
+      # #7 - Summary
+      - name: Summary
+        run: |
+          if [ "${{ steps.git-check.outputs.changed }}" == "true" ]; then
+            echo "Documentation updated successfully" >> $GITHUB_STEP_SUMMARY
+          else 
+            echo "No changes detected in documentation" >> $GITHUB_STEP_SUMMARY  
+          fi

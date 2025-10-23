@@ -1,10 +1,12 @@
-import { GoogleGenerativeAI } from '@google/generative-ai';
+import { GoogleGenerativeAI } from "@google/generative-ai";
 
-const genAI = new GoogleGenerativeAI(process.env.GOOGLE_GENERATIVE_AI_API_KEY || '');
+const genAI = new GoogleGenerativeAI(
+  process.env.GOOGLE_GENERATIVE_AI_API_KEY || "",
+);
 
 export const aiModel = genAI.getGenerativeModel({
-  model: 'gemini-2.5-flash'
-})
+  model: "gemini-2.5-flash",
+});
 
 export const javaSystemPrompt = `You are a Java documentation expert and teaching assistant. Your role is to help developers and students learn Java by:
 

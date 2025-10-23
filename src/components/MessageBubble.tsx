@@ -1,23 +1,29 @@
-import { User, Coffee } from 'lucide-react';
-import { CodeBlock } from './CodeBlock';
-import { extractCodeBlocks } from '@/lib/utils';
-import { parseMarkdown } from '@/lib/markdown';
-import { MessageBubbleProps } from './types';
+import { User, Coffee } from "lucide-react";
+import { CodeBlock } from "./CodeBlock";
+import { extractCodeBlocks } from "@/lib/utils";
+import { parseMarkdown } from "@/lib/markdown";
+import { MessageBubbleProps } from "./types";
 
-export function MessageBubble({message}: MessageBubbleProps) {
-  const isUser = message.role === 'user'
-  const blocks = extractCodeBlocks(message.content)
+export function MessageBubble({ message }: MessageBubbleProps) {
+  const isUser = message.role === "user";
+  const blocks = extractCodeBlocks(message.content);
 
   return (
-    <article className={`flex ${isUser ? 'justify-end' : 'justify-start'} mb-6`}>
-      <div className={`flex max-w-3xl ${isUser ? 'flex-row-reverse' : 'flex-row'}`}>
+    <article
+      className={`flex ${isUser ? "justify-end" : "justify-start"} mb-6`}
+    >
+      <div
+        className={`flex max-w-3xl ${isUser ? "flex-row-reverse" : "flex-row"}`}
+      >
         {/* Avatar */}
-        <figure className={`flex-shrink-0 ${isUser ? 'ml-3' : 'mr-3'}`}>
-          <div className={`w-8 h-8 rounded-full flex items-center justify-center ${
-            isUser
-              ? 'bg-blue-500 text-white'
-              : 'bg-orange-500 text-white'
-          }`} role="img" aria-label={isUser ? 'User avatar' : 'Assistant avatar'}>
+        <figure className={`flex-shrink-0 ${isUser ? "ml-3" : "mr-3"}`}>
+          <div
+            className={`w-8 h-8 rounded-full flex items-center justify-center ${
+              isUser ? "bg-blue-500 text-white" : "bg-orange-500 text-white"
+            }`}
+            role="img"
+            aria-label={isUser ? "User avatar" : "Assistant avatar"}
+          >
             {isUser ? (
               <User className="h-4 w-4" />
             ) : (
@@ -26,44 +32,48 @@ export function MessageBubble({message}: MessageBubbleProps) {
           </div>
         </figure>
         {/* Message */}
-        <section className={`rounded-lg p-4 ${
-          isUser
-            ? 'bg-blue-500 text-white max-w-md shadow-md'
-            : 'bg-white border border-gray-200 shadow-sm flex-1'
-        }`}>
+        <section
+          className={`rounded-lg p-4 ${
+            isUser
+              ? "bg-blue-500 text-white max-w-md shadow-md"
+              : "bg-white border border-gray-200 shadow-sm flex-1"
+          }`}
+        >
           {blocks.length > 0 ? (
             <>
-              {blocks.map((block, index) => (
-                block.type === 'code' ? (
+              {blocks.map((block, index) =>
+                block.type === "code" ? (
                   <CodeBlock
                     key={index}
                     code={block.content}
                     language={block.language}
                   />
                 ) : isUser ? (
-                  <p key={index} className={`whitespace-pre-wrap leading-snug text-white ${index > 0 ? 'mt-2' : ''}`}>
+                  <p
+                    key={index}
+                    className={`whitespace-pre-wrap leading-snug text-white ${index > 0 ? "mt-2" : ""}`}
+                  >
                     {block.content}
                   </p>
                 ) : (
-                  <div key={index} className={`space-y-1 ${index > 0 ? 'mt-2' : ''}`}>
+                  <div
+                    key={index}
+                    className={`space-y-1 ${index > 0 ? "mt-2" : ""}`}
+                  >
                     {parseMarkdown(block.content)}
                   </div>
-                )
-              ))}
+                ),
+              )}
             </>
+          ) : isUser ? (
+            <p className="whitespace-pre-wrap leading-snug text-white">
+              {message.content}
+            </p>
           ) : (
-            isUser ? (
-              <p className="whitespace-pre-wrap leading-snug text-white">
-                {message.content}
-              </p>
-            ) : (
-              <div className="space-y-1">
-                {parseMarkdown(message.content)}
-              </div>
-            )
+            <div className="space-y-1">{parseMarkdown(message.content)}</div>
           )}
         </section>
       </div>
     </article>
-  )
+  );
 }

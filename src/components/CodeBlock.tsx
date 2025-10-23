@@ -1,22 +1,22 @@
-'use client'
+"use client";
 
 import { useState } from "react";
 import { CodeBlockProps } from "./types";
 import { Button } from "./ui/Button";
 import { Check, Code, Copy } from "lucide-react";
 
-export function CodeBlock({code, language = 'java'}: CodeBlockProps) {
-  const [copied, setCopied] = useState(false)
+export function CodeBlock({ code, language = "java" }: CodeBlockProps) {
+  const [copied, setCopied] = useState(false);
 
   const copyToClipboard = async () => {
     try {
-      await navigator.clipboard.writeText(code)
-      setCopied(true)
-      setTimeout(() => setCopied(false), 2000) 
+      await navigator.clipboard.writeText(code);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
     } catch (error) {
-      console.error('Failed to copy code: ', error)
+      console.error("Failed to copy code: ", error);
     }
-  }
+  };
 
   return (
     <figure className="relative bg-gray-900 rounded-lg overflow-hidden my-4 border border-gray-700 w-full max-w-full">
@@ -49,9 +49,7 @@ export function CodeBlock({code, language = 'java'}: CodeBlockProps) {
       </header>
 
       <pre className="p-4 text-sm leading-relaxed overflow-x-auto">
-        <code className="text-gray-100 font-mono">
-          {code}
-        </code>
+        <code className="text-gray-100 font-mono">{code}</code>
       </pre>
     </figure>
   );

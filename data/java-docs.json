@@ -1,0 +1,3080 @@
+[
+  {
+    "className": "ArrayList",
+    "packageName": "java.util",
+    "description": "Resizable-array implementation of the List interface.  Implements\n all optional list operations, and permits all elements, including\n null.  In addition to implementing the List interface,\n this class provides methods to manipulate the size of the array that is\n used internally to store the list.  (This class is roughly equivalent to\n Vector, except that it is unsynchronized.)\n\n The size, isEmpty, get, set,\n iterator, and listIterator operations run in constant\n time.  The add operation runs in amortized constant time,\n that is, adding n elements requires O(n) time.  All of the other operations\n run in linear time (roughly speaking).  The constant factor is low compared\n to that for the LinkedList implementation.\n\n Each ArrayList instance has a capacity.  The capacity is\n the size of the array used to store the elements in the list.  It is always\n at least as large as the list size.  As elements are added to an ArrayList,\n its capacity grows automatically.  The details of the growth policy are not\n specified beyond the fact that adding an element has constant amortized\n time cost.\n\n An application can increase the capacity of an ArrayList instance\n before adding a large number of elements using the ensureCapacity\n operation.  This may reduce the amount of incremental reallocation.\n\n Note that this implementation is not synchronized.\n If multiple threads access an ArrayList instance concurrently,\n and at least one of the threads modifies the list structurally, it\n must be synchronized externally.  (A structural modification is\n any operation that adds or deletes one or more elements, or explicitly\n resizes the backing array; merely setting the value of an element is not\n a structural modification.)  This is typically accomplished by\n synchronizing on some object that naturally encapsulates the list.\n\n If no such object exists, the list should be \"wrapped\" using the\n Collections.synchronizedList\n method.  This is best done at creation time, to prevent accidental\n unsynchronized access to the list:   List list = Collections.synchronizedList(new ArrayList(...));\n\n \n The iterators returned by this class's iterator and\n listIterator methods are fail-fast:\n if the list is structurally modified at any time after the iterator is\n created, in any way except through the iterator's own\n remove or\n add methods, the iterator will throw a\n ConcurrentModificationException.  Thus, in the face of\n concurrent modification, the iterator fails quickly and cleanly, rather\n than risking arbitrary, non-deterministic behavior at an undetermined\n time in the future.\n\n Note that the fail-fast behavior of an iterator cannot be guaranteed\n as it is, generally speaking, impossible to make any hard guarantees in the\n presence of unsynchronized concurrent modification.  Fail-fast iterators\n throw ConcurrentModificationException on a best-effort basis.\n Therefore, it would be wrong to write a program that depended on this\n exception for its correctness:  the fail-fast behavior of iterators\n should be used only to detect bugs.\n\n This class is a member of the\n \n Java Collections Framework.",
+    "methods": [
+      {
+        "name": "add",
+        "signature": "add(int index,\n E element)",
+        "description": "Inserts the specified element at the specified position in this\n list.",
+        "parameters": [],
+        "returnType": "void",
+        "modifiers": []
+      },
+      {
+        "name": "add",
+        "signature": "add(E e)",
+        "description": "Appends the specified element to the end of this list.",
+        "parameters": [],
+        "returnType": "boolean",
+        "modifiers": []
+      },
+      {
+        "name": "addAll",
+        "signature": "addAll(int index,\n Collection<? extends E> c)",
+        "description": "Inserts all of the elements in the specified collection into this\n list, starting at the specified position.",
+        "parameters": [],
+        "returnType": "boolean",
+        "modifiers": []
+      },
+      {
+        "name": "addAll",
+        "signature": "addAll(Collection<? extends E> c)",
+        "description": "Appends all of the elements in the specified collection to the end of\n this list, in the order that they are returned by the\n specified collection's Iterator.",
+        "parameters": [],
+        "returnType": "boolean",
+        "modifiers": []
+      },
+      {
+        "name": "clear",
+        "signature": "clear()",
+        "description": "Removes all of the elements from this list.",
+        "parameters": [],
+        "returnType": "void",
+        "modifiers": []
+      },
+      {
+        "name": "clone",
+        "signature": "clone()",
+        "description": "Returns a shallow copy of this ArrayList instance.",
+        "parameters": [],
+        "returnType": "Object",
+        "modifiers": []
+      },
+      {
+        "name": "contains",
+        "signature": "contains(Object o)",
+        "description": "Returns true if this list contains the specified element.",
+        "parameters": [],
+        "returnType": "boolean",
+        "modifiers": []
+      },
+      {
+        "name": "ensureCapacity",
+        "signature": "ensureCapacity(int minCapacity)",
+        "description": "Increases the capacity of this ArrayList instance, if\n necessary, to ensure that it can hold at least the number of elements\n specified by the minimum capacity argument.",
+        "parameters": [],
+        "returnType": "void",
+        "modifiers": []
+      },
+      {
+        "name": "equals",
+        "signature": "equals(Object o)",
+        "description": "Compares the specified object with this list for equality.",
+        "parameters": [],
+        "returnType": "boolean",
+        "modifiers": []
+      },
+      {
+        "name": "forEach",
+        "signature": "forEach(Consumer<? super E> action)",
+        "description": "Performs the given action for each element of the Iterable\n until all elements have been processed or the action throws an\n exception.",
+        "parameters": [],
+        "returnType": "void",
+        "modifiers": []
+      },
+      {
+        "name": "get",
+        "signature": "get(int index)",
+        "description": "Returns the element at the specified position in this list.",
+        "parameters": [],
+        "returnType": "E",
+        "modifiers": []
+      },
+      {
+        "name": "hashCode",
+        "signature": "hashCode()",
+        "description": "Returns the hash code value for this list.",
+        "parameters": [],
+        "returnType": "int",
+        "modifiers": []
+      },
+      {
+        "name": "indexOf",
+        "signature": "indexOf(Object o)",
+        "description": "Returns the index of the first occurrence of the specified element\n in this list, or -1 if this list does not contain the element.",
+        "parameters": [],
+        "returnType": "int",
+        "modifiers": []
+      },
+      {
+        "name": "isEmpty",
+        "signature": "isEmpty()",
+        "description": "Returns true if this list contains no elements.",
+        "parameters": [],
+        "returnType": "boolean",
+        "modifiers": []
+      },
+      {
+        "name": "iterator",
+        "signature": "iterator()",
+        "description": "Returns an iterator over the elements in this list in proper sequence.",
+        "parameters": [],
+        "returnType": "Iterator<E>",
+        "modifiers": []
+      },
+      {
+        "name": "lastIndexOf",
+        "signature": "lastIndexOf(Object o)",
+        "description": "Returns the index of the last occurrence of the specified element\n in this list, or -1 if this list does not contain the element.",
+        "parameters": [],
+        "returnType": "int",
+        "modifiers": []
+      },
+      {
+        "name": "listIterator",
+        "signature": "listIterator()",
+        "description": "Returns a list iterator over the elements in this list (in proper\n sequence).",
+        "parameters": [],
+        "returnType": "ListIterator<E>",
+        "modifiers": []
+      },
+      {
+        "name": "listIterator",
+        "signature": "listIterator(int index)",
+        "description": "Returns a list iterator over the elements in this list (in proper\n sequence), starting at the specified position in the list.",
+        "parameters": [],
+        "returnType": "ListIterator<E>",
+        "modifiers": []
+      },
+      {
+        "name": "remove",
+        "signature": "remove(int index)",
+        "description": "Removes the element at the specified position in this list.",
+        "parameters": [],
+        "returnType": "E",
+        "modifiers": []
+      },
+      {
+        "name": "remove",
+        "signature": "remove(Object o)",
+        "description": "Removes the first occurrence of the specified element from this list,\n if it is present.",
+        "parameters": [],
+        "returnType": "boolean",
+        "modifiers": []
+      },
+      {
+        "name": "removeAll",
+        "signature": "removeAll(Collection<?> c)",
+        "description": "Removes from this list all of its elements that are contained in the\n specified collection.",
+        "parameters": [],
+        "returnType": "boolean",
+        "modifiers": []
+      },
+      {
+        "name": "removeIf",
+        "signature": "removeIf(Predicate<? super E> filter)",
+        "description": "Removes all of the elements of this collection that satisfy the given\n predicate.",
+        "parameters": [],
+        "returnType": "boolean",
+        "modifiers": []
+      },
+      {
+        "name": "removeRange",
+        "signature": "removeRange(int fromIndex,\n int toIndex)",
+        "description": "Removes from this list all of the elements whose index is between\n fromIndex, inclusive, and toIndex, exclusive.",
+        "parameters": [],
+        "returnType": "protected void",
+        "modifiers": []
+      },
+      {
+        "name": "retainAll",
+        "signature": "retainAll(Collection<?> c)",
+        "description": "Retains only the elements in this list that are contained in the\n specified collection.",
+        "parameters": [],
+        "returnType": "boolean",
+        "modifiers": []
+      },
+      {
+        "name": "set",
+        "signature": "set(int index,\n E element)",
+        "description": "Replaces the element at the specified position in this list with\n the specified element.",
+        "parameters": [],
+        "returnType": "E",
+        "modifiers": []
+      },
+      {
+        "name": "size",
+        "signature": "size()",
+        "description": "Returns the number of elements in this list.",
+        "parameters": [],
+        "returnType": "int",
+        "modifiers": []
+      },
+      {
+        "name": "spliterator",
+        "signature": "spliterator()",
+        "description": "Creates a late-binding\n and fail-fast Spliterator over the elements in this\n list.",
+        "parameters": [],
+        "returnType": "Spliterator<E>",
+        "modifiers": []
+      },
+      {
+        "name": "subList",
+        "signature": "subList(int fromIndex,\n int toIndex)",
+        "description": "Returns a view of the portion of this list between the specified\n fromIndex, inclusive, and toIndex, exclusive.",
+        "parameters": [],
+        "returnType": "List<E>",
+        "modifiers": []
+      },
+      {
+        "name": "toArray",
+        "signature": "toArray()",
+        "description": "Returns an array containing all of the elements in this list\n in proper sequence (from first to last element).",
+        "parameters": [],
+        "returnType": "Object[]",
+        "modifiers": []
+      },
+      {
+        "name": "toArray",
+        "signature": "toArray(T[] a)",
+        "description": "Returns an array containing all of the elements in this list in proper\n sequence (from first to last element); the runtime type of the returned\n array is that of the specified array.",
+        "parameters": [],
+        "returnType": "<T> T[]",
+        "modifiers": []
+      },
+      {
+        "name": "trimToSize",
+        "signature": "trimToSize()",
+        "description": "Trims the capacity of this ArrayList instance to be the\n list's current size.",
+        "parameters": [],
+        "returnType": "void",
+        "modifiers": []
+      }
+    ],
+    "constructors": [
+      {
+        "name": "ArrayList",
+        "signature": "ArrayList()",
+        "description": "Constructs an empty list with an initial capacity of ten.",
+        "parameters": [],
+        "returnType": "",
+        "modifiers": [
+          "public"
+        ]
+      },
+      {
+        "name": "ArrayList",
+        "signature": "ArrayList(int initialCapacity)",
+        "description": "Constructs an empty list with the specified initial capacity.",
+        "parameters": [],
+        "returnType": "",
+        "modifiers": [
+          "public"
+        ]
+      },
+      {
+        "name": "ArrayList",
+        "signature": "ArrayList(Collection<? extends E> c)",
+        "description": "Constructs a list containing the elements of the specified\n collection, in the order they are returned by the collection's\n iterator.",
+        "parameters": [],
+        "returnType": "",
+        "modifiers": [
+          "public"
+        ]
+      }
+    ],
+    "fields": [],
+    "examples": [
+      "List list = Collections.synchronizedList(new ArrayList(...));"
+    ],
+    "officialUrl": "https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/ArrayList.html",
+    "scrapedAt": "2025-10-23T23:51:11.411Z"
+  },
+  {
+    "className": "HashMap",
+    "packageName": "java.util",
+    "description": "Hash table based implementation of the Map interface.  This\n implementation provides all of the optional map operations, and permits\n null values and the null key.  (The HashMap\n class is roughly equivalent to Hashtable, except that it is\n unsynchronized and permits nulls.)  This class makes no guarantees as to\n the order of the map; in particular, it does not guarantee that the order\n will remain constant over time.\n\n This implementation provides constant-time performance for the basic\n operations (get and put), assuming the hash function\n disperses the elements properly among the buckets.  Iteration over\n collection views requires time proportional to the \"capacity\" of the\n HashMap instance (the number of buckets) plus its size (the number\n of key-value mappings).  Thus, it's very important not to set the initial\n capacity too high (or the load factor too low) if iteration performance is\n important.\n\n An instance of HashMap has two parameters that affect its\n performance: initial capacity and load factor.  The\n capacity is the number of buckets in the hash table, and the initial\n capacity is simply the capacity at the time the hash table is created.  The\n load factor is a measure of how full the hash table is allowed to\n get before its capacity is automatically increased.  When the number of\n entries in the hash table exceeds the product of the load factor and the\n current capacity, the hash table is rehashed (that is, internal data\n structures are rebuilt) so that the hash table has approximately twice the\n number of buckets.\n\n As a general rule, the default load factor (.75) offers a good\n tradeoff between time and space costs.  Higher values decrease the\n space overhead but increase the lookup cost (reflected in most of\n the operations of the HashMap class, including\n get and put).  The expected number of entries in\n the map and its load factor should be taken into account when\n setting its initial capacity, so as to minimize the number of\n rehash operations.  If the initial capacity is greater than the\n maximum number of entries divided by the load factor, no rehash\n operations will ever occur.\n\n If many mappings are to be stored in a HashMap\n instance, creating it with a sufficiently large capacity will allow\n the mappings to be stored more efficiently than letting it perform\n automatic rehashing as needed to grow the table.  Note that using\n many keys with the same hashCode() is a sure way to slow\n down performance of any hash table. To ameliorate impact, when keys\n are Comparable, this class may use comparison order among\n keys to help break ties.\n\n Note that this implementation is not synchronized.\n If multiple threads access a hash map concurrently, and at least one of\n the threads modifies the map structurally, it must be\n synchronized externally.  (A structural modification is any operation\n that adds or deletes one or more mappings; merely changing the value\n associated with a key that an instance already contains is not a\n structural modification.)  This is typically accomplished by\n synchronizing on some object that naturally encapsulates the map.\n\n If no such object exists, the map should be \"wrapped\" using the\n Collections.synchronizedMap\n method.  This is best done at creation time, to prevent accidental\n unsynchronized access to the map:   Map m = Collections.synchronizedMap(new HashMap(...));\n\n The iterators returned by all of this class's \"collection view methods\"\n are fail-fast: if the map is structurally modified at any time after\n the iterator is created, in any way except through the iterator's own\n remove method, the iterator will throw a\n ConcurrentModificationException.  Thus, in the face of concurrent\n modification, the iterator fails quickly and cleanly, rather than risking\n arbitrary, non-deterministic behavior at an undetermined time in the\n future.\n\n Note that the fail-fast behavior of an iterator cannot be guaranteed\n as it is, generally speaking, impossible to make any hard guarantees in the\n presence of unsynchronized concurrent modification.  Fail-fast iterators\n throw ConcurrentModificationException on a best-effort basis.\n Therefore, it would be wrong to write a program that depended on this\n exception for its correctness: the fail-fast behavior of iterators\n should be used only to detect bugs.\n\n This class is a member of the\n \n Java Collections Framework.",
+    "methods": [
+      {
+        "name": "clear",
+        "signature": "clear()",
+        "description": "Removes all of the mappings from this map.",
+        "parameters": [],
+        "returnType": "void",
+        "modifiers": []
+      },
+      {
+        "name": "clone",
+        "signature": "clone()",
+        "description": "Returns a shallow copy of this HashMap instance: the keys and\n values themselves are not cloned.",
+        "parameters": [],
+        "returnType": "Object",
+        "modifiers": []
+      },
+      {
+        "name": "compute",
+        "signature": "compute(K key,\n BiFunction<? super K,? super V,? extends V> remappingFunction)",
+        "description": "Attempts to compute a mapping for the specified key and its current\n mapped value (or null if there is no current mapping).",
+        "parameters": [],
+        "returnType": "V",
+        "modifiers": []
+      },
+      {
+        "name": "computeIfAbsent",
+        "signature": "computeIfAbsent(K key,\n Function<? super K,? extends V> mappingFunction)",
+        "description": "If the specified key is not already associated with a value (or is mapped\n to null), attempts to compute its value using the given mapping\n function and enters it into this map unless null.",
+        "parameters": [],
+        "returnType": "V",
+        "modifiers": []
+      },
+      {
+        "name": "computeIfPresent",
+        "signature": "computeIfPresent(K key,\n BiFunction<? super K,? super V,? extends V> remappingFunction)",
+        "description": "If the value for the specified key is present and non-null, attempts to\n compute a new mapping given the key and its current mapped value.",
+        "parameters": [],
+        "returnType": "V",
+        "modifiers": []
+      },
+      {
+        "name": "containsKey",
+        "signature": "containsKey(Object key)",
+        "description": "Returns true if this map contains a mapping for the\n specified key.",
+        "parameters": [],
+        "returnType": "boolean",
+        "modifiers": []
+      },
+      {
+        "name": "containsValue",
+        "signature": "containsValue(Object value)",
+        "description": "Returns true if this map maps one or more keys to the\n specified value.",
+        "parameters": [],
+        "returnType": "boolean",
+        "modifiers": []
+      },
+      {
+        "name": "entrySet",
+        "signature": "entrySet()",
+        "description": "Returns a Set view of the mappings contained in this map.",
+        "parameters": [],
+        "returnType": "Set<Map.Entry<K,V>>",
+        "modifiers": []
+      },
+      {
+        "name": "get",
+        "signature": "get(Object key)",
+        "description": "Returns the value to which the specified key is mapped,\n or null if this map contains no mapping for the key.",
+        "parameters": [],
+        "returnType": "V",
+        "modifiers": []
+      },
+      {
+        "name": "isEmpty",
+        "signature": "isEmpty()",
+        "description": "Returns true if this map contains no key-value mappings.",
+        "parameters": [],
+        "returnType": "boolean",
+        "modifiers": []
+      },
+      {
+        "name": "keySet",
+        "signature": "keySet()",
+        "description": "Returns a Set view of the keys contained in this map.",
+        "parameters": [],
+        "returnType": "Set<K>",
+        "modifiers": []
+      },
+      {
+        "name": "merge",
+        "signature": "merge(K key,\n V value,\n BiFunction<? super V,? super V,? extends V> remappingFunction)",
+        "description": "If the specified key is not already associated with a value or is\n associated with null, associates it with the given non-null value.",
+        "parameters": [],
+        "returnType": "V",
+        "modifiers": []
+      },
+      {
+        "name": "put",
+        "signature": "put(K key,\n V value)",
+        "description": "Associates the specified value with the specified key in this map.",
+        "parameters": [],
+        "returnType": "V",
+        "modifiers": []
+      },
+      {
+        "name": "putAll",
+        "signature": "putAll(Map<? extends K,? extends V> m)",
+        "description": "Copies all of the mappings from the specified map to this map.",
+        "parameters": [],
+        "returnType": "void",
+        "modifiers": []
+      },
+      {
+        "name": "remove",
+        "signature": "remove(Object key)",
+        "description": "Removes the mapping for the specified key from this map if present.",
+        "parameters": [],
+        "returnType": "V",
+        "modifiers": []
+      },
+      {
+        "name": "size",
+        "signature": "size()",
+        "description": "Returns the number of key-value mappings in this map.",
+        "parameters": [],
+        "returnType": "int",
+        "modifiers": []
+      },
+      {
+        "name": "values",
+        "signature": "values()",
+        "description": "Returns a Collection view of the values contained in this map.",
+        "parameters": [],
+        "returnType": "Collection<V>",
+        "modifiers": []
+      }
+    ],
+    "constructors": [
+      {
+        "name": "HashMap",
+        "signature": "HashMap()",
+        "description": "Constructs an empty HashMap with the default initial capacity\n (16) and the default load factor (0.75).",
+        "parameters": [],
+        "returnType": "",
+        "modifiers": [
+          "public"
+        ]
+      },
+      {
+        "name": "HashMap",
+        "signature": "HashMap(int initialCapacity)",
+        "description": "Constructs an empty HashMap with the specified initial\n capacity and the default load factor (0.75).",
+        "parameters": [],
+        "returnType": "",
+        "modifiers": [
+          "public"
+        ]
+      },
+      {
+        "name": "HashMap",
+        "signature": "HashMap(int initialCapacity,\n float loadFactor)",
+        "description": "Constructs an empty HashMap with the specified initial\n capacity and load factor.",
+        "parameters": [],
+        "returnType": "",
+        "modifiers": [
+          "public"
+        ]
+      },
+      {
+        "name": "HashMap",
+        "signature": "HashMap(Map<? extends K,? extends V> m)",
+        "description": "Constructs a new HashMap with the same mappings as the\n specified Map.",
+        "parameters": [],
+        "returnType": "",
+        "modifiers": [
+          "public"
+        ]
+      }
+    ],
+    "fields": [],
+    "examples": [
+      "Map m = Collections.synchronizedMap(new HashMap(...));",
+      "map.computeIfAbsent(key, k -> new Value(f(k)));",
+      "map.computeIfAbsent(key, k -> new HashSet<V>()).add(v);"
+    ],
+    "officialUrl": "https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/HashMap.html",
+    "scrapedAt": "2025-10-23T23:51:12.561Z"
+  },
+  {
+    "className": "HashSet",
+    "packageName": "java.util",
+    "description": "This class implements the Set interface, backed by a hash table\n (actually a HashMap instance).  It makes no guarantees as to the\n iteration order of the set; in particular, it does not guarantee that the\n order will remain constant over time.  This class permits the null\n element.\n\n This class offers constant time performance for the basic operations\n (add, remove, contains and size),\n assuming the hash function disperses the elements properly among the\n buckets.  Iterating over this set requires time proportional to the sum of\n the HashSet instance's size (the number of elements) plus the\n \"capacity\" of the backing HashMap instance (the number of\n buckets).  Thus, it's very important not to set the initial capacity too\n high (or the load factor too low) if iteration performance is important.\n\n Note that this implementation is not synchronized.\n If multiple threads access a hash set concurrently, and at least one of\n the threads modifies the set, it must be synchronized externally.\n This is typically accomplished by synchronizing on some object that\n naturally encapsulates the set.\n\n If no such object exists, the set should be \"wrapped\" using the\n Collections.synchronizedSet\n method.  This is best done at creation time, to prevent accidental\n unsynchronized access to the set:   Set s = Collections.synchronizedSet(new HashSet(...));\n\n The iterators returned by this class's iterator method are\n fail-fast: if the set is modified at any time after the iterator is\n created, in any way except through the iterator's own remove\n method, the Iterator throws a ConcurrentModificationException.\n Thus, in the face of concurrent modification, the iterator fails quickly\n and cleanly, rather than risking arbitrary, non-deterministic behavior at\n an undetermined time in the future.\n\n Note that the fail-fast behavior of an iterator cannot be guaranteed\n as it is, generally speaking, impossible to make any hard guarantees in the\n presence of unsynchronized concurrent modification.  Fail-fast iterators\n throw ConcurrentModificationException on a best-effort basis.\n Therefore, it would be wrong to write a program that depended on this\n exception for its correctness: the fail-fast behavior of iterators\n should be used only to detect bugs.\n\n This class is a member of the\n \n Java Collections Framework.",
+    "methods": [
+      {
+        "name": "add",
+        "signature": "add(E e)",
+        "description": "Adds the specified element to this set if it is not already present.",
+        "parameters": [],
+        "returnType": "boolean",
+        "modifiers": []
+      },
+      {
+        "name": "clear",
+        "signature": "clear()",
+        "description": "Removes all of the elements from this set.",
+        "parameters": [],
+        "returnType": "void",
+        "modifiers": []
+      },
+      {
+        "name": "clone",
+        "signature": "clone()",
+        "description": "Returns a shallow copy of this HashSet instance: the elements\n themselves are not cloned.",
+        "parameters": [],
+        "returnType": "Object",
+        "modifiers": []
+      },
+      {
+        "name": "contains",
+        "signature": "contains(Object o)",
+        "description": "Returns true if this set contains the specified element.",
+        "parameters": [],
+        "returnType": "boolean",
+        "modifiers": []
+      },
+      {
+        "name": "isEmpty",
+        "signature": "isEmpty()",
+        "description": "Returns true if this set contains no elements.",
+        "parameters": [],
+        "returnType": "boolean",
+        "modifiers": []
+      },
+      {
+        "name": "iterator",
+        "signature": "iterator()",
+        "description": "Returns an iterator over the elements in this set.",
+        "parameters": [],
+        "returnType": "Iterator<E>",
+        "modifiers": []
+      },
+      {
+        "name": "remove",
+        "signature": "remove(Object o)",
+        "description": "Removes the specified element from this set if it is present.",
+        "parameters": [],
+        "returnType": "boolean",
+        "modifiers": []
+      },
+      {
+        "name": "size",
+        "signature": "size()",
+        "description": "Returns the number of elements in this set (its cardinality).",
+        "parameters": [],
+        "returnType": "int",
+        "modifiers": []
+      },
+      {
+        "name": "spliterator",
+        "signature": "spliterator()",
+        "description": "Creates a late-binding\n and fail-fast Spliterator over the elements in this\n set.",
+        "parameters": [],
+        "returnType": "Spliterator<E>",
+        "modifiers": []
+      },
+      {
+        "name": "toArray",
+        "signature": "toArray()",
+        "description": "Returns an array containing all of the elements in this collection.",
+        "parameters": [],
+        "returnType": "Object[]",
+        "modifiers": []
+      },
+      {
+        "name": "toArray",
+        "signature": "toArray(T[] a)",
+        "description": "Returns an array containing all of the elements in this collection;\n the runtime type of the returned array is that of the specified array.",
+        "parameters": [],
+        "returnType": "<T> T[]",
+        "modifiers": []
+      }
+    ],
+    "constructors": [
+      {
+        "name": "HashSet",
+        "signature": "HashSet()",
+        "description": "Constructs a new, empty set; the backing HashMap instance has\n default initial capacity (16) and load factor (0.75).",
+        "parameters": [],
+        "returnType": "",
+        "modifiers": [
+          "public"
+        ]
+      },
+      {
+        "name": "HashSet",
+        "signature": "HashSet(int initialCapacity)",
+        "description": "Constructs a new, empty set; the backing HashMap instance has\n the specified initial capacity and default load factor (0.75).",
+        "parameters": [],
+        "returnType": "",
+        "modifiers": [
+          "public"
+        ]
+      },
+      {
+        "name": "HashSet",
+        "signature": "HashSet(int initialCapacity,\n float loadFactor)",
+        "description": "Constructs a new, empty set; the backing HashMap instance has\n the specified initial capacity and the specified load factor.",
+        "parameters": [],
+        "returnType": "",
+        "modifiers": [
+          "public"
+        ]
+      },
+      {
+        "name": "HashSet",
+        "signature": "HashSet(Collection<? extends E> c)",
+        "description": "Constructs a new set containing the elements in the specified\n collection.",
+        "parameters": [],
+        "returnType": "",
+        "modifiers": [
+          "public"
+        ]
+      }
+    ],
+    "fields": [],
+    "examples": [
+      "Set s = Collections.synchronizedSet(new HashSet(...));"
+    ],
+    "officialUrl": "https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/HashSet.html",
+    "scrapedAt": "2025-10-23T23:51:13.982Z"
+  },
+  {
+    "className": "LinkedList",
+    "packageName": "java.util",
+    "description": "Doubly-linked list implementation of the List and Deque\n interfaces.  Implements all optional list operations, and permits all\n elements (including null).\n\n All of the operations perform as could be expected for a doubly-linked\n list.  Operations that index into the list will traverse the list from\n the beginning or the end, whichever is closer to the specified index.\n\n Note that this implementation is not synchronized.\n If multiple threads access a linked list concurrently, and at least\n one of the threads modifies the list structurally, it must be\n synchronized externally.  (A structural modification is any operation\n that adds or deletes one or more elements; merely setting the value of\n an element is not a structural modification.)  This is typically\n accomplished by synchronizing on some object that naturally\n encapsulates the list.\n\n If no such object exists, the list should be \"wrapped\" using the\n Collections.synchronizedList\n method.  This is best done at creation time, to prevent accidental\n unsynchronized access to the list:   List list = Collections.synchronizedList(new LinkedList(...));\n\n The iterators returned by this class's iterator and\n listIterator methods are fail-fast: if the list is\n structurally modified at any time after the iterator is created, in\n any way except through the Iterator's own remove or\n add methods, the iterator will throw a ConcurrentModificationException.  Thus, in the face of concurrent\n modification, the iterator fails quickly and cleanly, rather than\n risking arbitrary, non-deterministic behavior at an undetermined\n time in the future.\n\n Note that the fail-fast behavior of an iterator cannot be guaranteed\n as it is, generally speaking, impossible to make any hard guarantees in the\n presence of unsynchronized concurrent modification.  Fail-fast iterators\n throw ConcurrentModificationException on a best-effort basis.\n Therefore, it would be wrong to write a program that depended on this\n exception for its correctness:   the fail-fast behavior of iterators\n should be used only to detect bugs.\n\n This class is a member of the\n \n Java Collections Framework.",
+    "methods": [
+      {
+        "name": "add",
+        "signature": "add(int index,\n E element)",
+        "description": "Inserts the specified element at the specified position in this list.",
+        "parameters": [],
+        "returnType": "void",
+        "modifiers": []
+      },
+      {
+        "name": "add",
+        "signature": "add(E e)",
+        "description": "Appends the specified element to the end of this list.",
+        "parameters": [],
+        "returnType": "boolean",
+        "modifiers": []
+      },
+      {
+        "name": "addAll",
+        "signature": "addAll(int index,\n Collection<? extends E> c)",
+        "description": "Inserts all of the elements in the specified collection into this\n list, starting at the specified position.",
+        "parameters": [],
+        "returnType": "boolean",
+        "modifiers": []
+      },
+      {
+        "name": "addAll",
+        "signature": "addAll(Collection<? extends E> c)",
+        "description": "Appends all of the elements in the specified collection to the end of\n this list, in the order that they are returned by the specified\n collection's iterator.",
+        "parameters": [],
+        "returnType": "boolean",
+        "modifiers": []
+      },
+      {
+        "name": "addFirst",
+        "signature": "addFirst(E e)",
+        "description": "Inserts the specified element at the beginning of this list.",
+        "parameters": [],
+        "returnType": "void",
+        "modifiers": []
+      },
+      {
+        "name": "addLast",
+        "signature": "addLast(E e)",
+        "description": "Appends the specified element to the end of this list.",
+        "parameters": [],
+        "returnType": "void",
+        "modifiers": []
+      },
+      {
+        "name": "clear",
+        "signature": "clear()",
+        "description": "Removes all of the elements from this list.",
+        "parameters": [],
+        "returnType": "void",
+        "modifiers": []
+      },
+      {
+        "name": "clone",
+        "signature": "clone()",
+        "description": "Returns a shallow copy of this LinkedList.",
+        "parameters": [],
+        "returnType": "Object",
+        "modifiers": []
+      },
+      {
+        "name": "contains",
+        "signature": "contains(Object o)",
+        "description": "Returns true if this list contains the specified element.",
+        "parameters": [],
+        "returnType": "boolean",
+        "modifiers": []
+      },
+      {
+        "name": "descendingIterator",
+        "signature": "descendingIterator()",
+        "description": "Returns an iterator over the elements in this deque in reverse\n sequential order.",
+        "parameters": [],
+        "returnType": "Iterator<E>",
+        "modifiers": []
+      },
+      {
+        "name": "element",
+        "signature": "element()",
+        "description": "Retrieves, but does not remove, the head (first element) of this list.",
+        "parameters": [],
+        "returnType": "E",
+        "modifiers": []
+      },
+      {
+        "name": "get",
+        "signature": "get(int index)",
+        "description": "Returns the element at the specified position in this list.",
+        "parameters": [],
+        "returnType": "E",
+        "modifiers": []
+      },
+      {
+        "name": "getFirst",
+        "signature": "getFirst()",
+        "description": "Returns the first element in this list.",
+        "parameters": [],
+        "returnType": "E",
+        "modifiers": []
+      },
+      {
+        "name": "getLast",
+        "signature": "getLast()",
+        "description": "Returns the last element in this list.",
+        "parameters": [],
+        "returnType": "E",
+        "modifiers": []
+      },
+      {
+        "name": "indexOf",
+        "signature": "indexOf(Object o)",
+        "description": "Returns the index of the first occurrence of the specified element\n in this list, or -1 if this list does not contain the element.",
+        "parameters": [],
+        "returnType": "int",
+        "modifiers": []
+      },
+      {
+        "name": "lastIndexOf",
+        "signature": "lastIndexOf(Object o)",
+        "description": "Returns the index of the last occurrence of the specified element\n in this list, or -1 if this list does not contain the element.",
+        "parameters": [],
+        "returnType": "int",
+        "modifiers": []
+      },
+      {
+        "name": "listIterator",
+        "signature": "listIterator(int index)",
+        "description": "Returns a list-iterator of the elements in this list (in proper\n sequence), starting at the specified position in the list.",
+        "parameters": [],
+        "returnType": "ListIterator<E>",
+        "modifiers": []
+      },
+      {
+        "name": "offer",
+        "signature": "offer(E e)",
+        "description": "Adds the specified element as the tail (last element) of this list.",
+        "parameters": [],
+        "returnType": "boolean",
+        "modifiers": []
+      },
+      {
+        "name": "offerFirst",
+        "signature": "offerFirst(E e)",
+        "description": "Inserts the specified element at the front of this list.",
+        "parameters": [],
+        "returnType": "boolean",
+        "modifiers": []
+      },
+      {
+        "name": "offerLast",
+        "signature": "offerLast(E e)",
+        "description": "Inserts the specified element at the end of this list.",
+        "parameters": [],
+        "returnType": "boolean",
+        "modifiers": []
+      },
+      {
+        "name": "peek",
+        "signature": "peek()",
+        "description": "Retrieves, but does not remove, the head (first element) of this list.",
+        "parameters": [],
+        "returnType": "E",
+        "modifiers": []
+      },
+      {
+        "name": "peekFirst",
+        "signature": "peekFirst()",
+        "description": "Retrieves, but does not remove, the first element of this list,\n or returns null if this list is empty.",
+        "parameters": [],
+        "returnType": "E",
+        "modifiers": []
+      },
+      {
+        "name": "peekLast",
+        "signature": "peekLast()",
+        "description": "Retrieves, but does not remove, the last element of this list,\n or returns null if this list is empty.",
+        "parameters": [],
+        "returnType": "E",
+        "modifiers": []
+      },
+      {
+        "name": "poll",
+        "signature": "poll()",
+        "description": "Retrieves and removes the head (first element) of this list.",
+        "parameters": [],
+        "returnType": "E",
+        "modifiers": []
+      },
+      {
+        "name": "pollFirst",
+        "signature": "pollFirst()",
+        "description": "Retrieves and removes the first element of this list,\n or returns null if this list is empty.",
+        "parameters": [],
+        "returnType": "E",
+        "modifiers": []
+      },
+      {
+        "name": "pollLast",
+        "signature": "pollLast()",
+        "description": "Retrieves and removes the last element of this list,\n or returns null if this list is empty.",
+        "parameters": [],
+        "returnType": "E",
+        "modifiers": []
+      },
+      {
+        "name": "pop",
+        "signature": "pop()",
+        "description": "Pops an element from the stack represented by this list.",
+        "parameters": [],
+        "returnType": "E",
+        "modifiers": []
+      },
+      {
+        "name": "push",
+        "signature": "push(E e)",
+        "description": "Pushes an element onto the stack represented by this list.",
+        "parameters": [],
+        "returnType": "void",
+        "modifiers": []
+      },
+      {
+        "name": "remove",
+        "signature": "remove()",
+        "description": "Retrieves and removes the head (first element) of this list.",
+        "parameters": [],
+        "returnType": "E",
+        "modifiers": []
+      },
+      {
+        "name": "remove",
+        "signature": "remove(int index)",
+        "description": "Removes the element at the specified position in this list.",
+        "parameters": [],
+        "returnType": "E",
+        "modifiers": []
+      },
+      {
+        "name": "remove",
+        "signature": "remove(Object o)",
+        "description": "Removes the first occurrence of the specified element from this list,\n if it is present.",
+        "parameters": [],
+        "returnType": "boolean",
+        "modifiers": []
+      },
+      {
+        "name": "removeFirst",
+        "signature": "removeFirst()",
+        "description": "Removes and returns the first element from this list.",
+        "parameters": [],
+        "returnType": "E",
+        "modifiers": []
+      },
+      {
+        "name": "removeFirstOccurrence",
+        "signature": "removeFirstOccurrence(Object o)",
+        "description": "Removes the first occurrence of the specified element in this\n list (when traversing the list from head to tail).",
+        "parameters": [],
+        "returnType": "boolean",
+        "modifiers": []
+      },
+      {
+        "name": "removeLast",
+        "signature": "removeLast()",
+        "description": "Removes and returns the last element from this list.",
+        "parameters": [],
+        "returnType": "E",
+        "modifiers": []
+      },
+      {
+        "name": "removeLastOccurrence",
+        "signature": "removeLastOccurrence(Object o)",
+        "description": "Removes the last occurrence of the specified element in this\n list (when traversing the list from head to tail).",
+        "parameters": [],
+        "returnType": "boolean",
+        "modifiers": []
+      },
+      {
+        "name": "set",
+        "signature": "set(int index,\n E element)",
+        "description": "Replaces the element at the specified position in this list with the\n specified element.",
+        "parameters": [],
+        "returnType": "E",
+        "modifiers": []
+      },
+      {
+        "name": "size",
+        "signature": "size()",
+        "description": "Returns the number of elements in this list.",
+        "parameters": [],
+        "returnType": "int",
+        "modifiers": []
+      },
+      {
+        "name": "spliterator",
+        "signature": "spliterator()",
+        "description": "Creates a late-binding\n and fail-fast Spliterator over the elements in this\n list.",
+        "parameters": [],
+        "returnType": "Spliterator<E>",
+        "modifiers": []
+      },
+      {
+        "name": "toArray",
+        "signature": "toArray()",
+        "description": "Returns an array containing all of the elements in this list\n in proper sequence (from first to last element).",
+        "parameters": [],
+        "returnType": "Object[]",
+        "modifiers": []
+      },
+      {
+        "name": "toArray",
+        "signature": "toArray(T[] a)",
+        "description": "Returns an array containing all of the elements in this list in\n proper sequence (from first to last element); the runtime type of\n the returned array is that of the specified array.",
+        "parameters": [],
+        "returnType": "<T> T[]",
+        "modifiers": []
+      }
+    ],
+    "constructors": [
+      {
+        "name": "LinkedList",
+        "signature": "LinkedList()",
+        "description": "Constructs an empty list.",
+        "parameters": [],
+        "returnType": "",
+        "modifiers": [
+          "public"
+        ]
+      },
+      {
+        "name": "LinkedList",
+        "signature": "LinkedList(Collection<? extends E> c)",
+        "description": "Constructs a list containing the elements of the specified\n collection, in the order they are returned by the collection's\n iterator.",
+        "parameters": [],
+        "returnType": "",
+        "modifiers": [
+          "public"
+        ]
+      }
+    ],
+    "fields": [],
+    "examples": [
+      "List list = Collections.synchronizedList(new LinkedList(...));",
+      "String[] y = x.toArray(new String[0]);"
+    ],
+    "officialUrl": "https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/LinkedList.html",
+    "scrapedAt": "2025-10-23T23:51:15.080Z"
+  },
+  {
+    "className": "String",
+    "packageName": "java.lang",
+    "description": "The String class represents character strings. All\n string literals in Java programs, such as \"abc\", are\n implemented as instances of this class.\n \n Strings are constant; their values cannot be changed after they\n are created. String buffers support mutable strings.\n Because String objects are immutable they can be shared. For example:\n      String str = \"abc\";\n \n is equivalent to:\n      char data[] = {'a', 'b', 'c'};\n     String str = new String(data);\n \n Here are some more examples of how strings can be used:\n      System.out.println(\"abc\");\n     String cde = \"cde\";\n     System.out.println(\"abc\" + cde);\n     String c = \"abc\".substring(2, 3);\n     String d = cde.substring(1, 2);\n \n \n The class String includes methods for examining\n individual characters of the sequence, for comparing strings, for\n searching strings, for extracting substrings, and for creating a\n copy of a string with all characters translated to uppercase or to\n lowercase. Case mapping is based on the Unicode Standard version\n specified by the Character class.\n \n The Java language provides special support for the string\n concatenation operator ( + ), and for conversion of\n other objects to strings. For additional information on string\n concatenation and conversion, see The Java Language Specification.\n\n  Unless otherwise noted, passing a null argument to a constructor\n or method in this class will cause a NullPointerException to be\n thrown.\n\n A String represents a string in the UTF-16 format\n in which supplementary characters are represented by surrogate\n pairs (see the section Unicode\n Character Representations in the Character class for\n more information).\n Index values refer to char code units, so a supplementary\n character uses two positions in a String.\n The String class provides methods for dealing with\n Unicode code points (i.e., characters), in addition to those for\n dealing with Unicode code units (i.e., char values).\n\n Unless otherwise noted, methods for comparing Strings do not take locale\n into account.  The Collator class provides methods for\n finer-grain, locale-sensitive String comparison.",
+    "methods": [
+      {
+        "name": "charAt",
+        "signature": "charAt(int index)",
+        "description": "Returns the char value at the\n specified index.",
+        "parameters": [],
+        "returnType": "char",
+        "modifiers": []
+      },
+      {
+        "name": "chars",
+        "signature": "chars()",
+        "description": "Returns a stream of int zero-extending the char values\n from this sequence.",
+        "parameters": [],
+        "returnType": "IntStream",
+        "modifiers": []
+      },
+      {
+        "name": "codePointAt",
+        "signature": "codePointAt(int index)",
+        "description": "Returns the character (Unicode code point) at the specified\n index.",
+        "parameters": [],
+        "returnType": "int",
+        "modifiers": []
+      },
+      {
+        "name": "codePointBefore",
+        "signature": "codePointBefore(int index)",
+        "description": "Returns the character (Unicode code point) before the specified\n index.",
+        "parameters": [],
+        "returnType": "int",
+        "modifiers": []
+      },
+      {
+        "name": "codePointCount",
+        "signature": "codePointCount(int beginIndex,\n int endIndex)",
+        "description": "Returns the number of Unicode code points in the specified text\n range of this String.",
+        "parameters": [],
+        "returnType": "int",
+        "modifiers": []
+      },
+      {
+        "name": "codePoints",
+        "signature": "codePoints()",
+        "description": "Returns a stream of code point values from this sequence.",
+        "parameters": [],
+        "returnType": "IntStream",
+        "modifiers": []
+      },
+      {
+        "name": "compareTo",
+        "signature": "compareTo(String anotherString)",
+        "description": "Compares two strings lexicographically.",
+        "parameters": [],
+        "returnType": "int",
+        "modifiers": []
+      },
+      {
+        "name": "compareToIgnoreCase",
+        "signature": "compareToIgnoreCase(String str)",
+        "description": "Compares two strings lexicographically, ignoring case\n differences.",
+        "parameters": [],
+        "returnType": "int",
+        "modifiers": []
+      },
+      {
+        "name": "concat",
+        "signature": "concat(String str)",
+        "description": "Concatenates the specified string to the end of this string.",
+        "parameters": [],
+        "returnType": "String",
+        "modifiers": []
+      },
+      {
+        "name": "contains",
+        "signature": "contains(CharSequence s)",
+        "description": "Returns true if and only if this string contains the specified\n sequence of char values.",
+        "parameters": [],
+        "returnType": "boolean",
+        "modifiers": []
+      },
+      {
+        "name": "contentEquals",
+        "signature": "contentEquals(CharSequence cs)",
+        "description": "Compares this string to the specified CharSequence.",
+        "parameters": [],
+        "returnType": "boolean",
+        "modifiers": []
+      },
+      {
+        "name": "contentEquals",
+        "signature": "contentEquals(StringBuffer sb)",
+        "description": "Compares this string to the specified StringBuffer.",
+        "parameters": [],
+        "returnType": "boolean",
+        "modifiers": []
+      },
+      {
+        "name": "copyValueOf",
+        "signature": "copyValueOf(char[] data)",
+        "description": "Equivalent to valueOf(char[]).",
+        "parameters": [],
+        "returnType": "static String",
+        "modifiers": []
+      },
+      {
+        "name": "copyValueOf",
+        "signature": "copyValueOf(char[] data,\n int offset,\n int count)",
+        "description": "Equivalent to valueOf(char[], int, int).",
+        "parameters": [],
+        "returnType": "static String",
+        "modifiers": []
+      },
+      {
+        "name": "describeConstable",
+        "signature": "describeConstable()",
+        "description": "Returns an Optional containing the nominal descriptor for this\n instance, which is the instance itself.",
+        "parameters": [],
+        "returnType": "Optional<String>",
+        "modifiers": []
+      },
+      {
+        "name": "endsWith",
+        "signature": "endsWith(String suffix)",
+        "description": "Tests if this string ends with the specified suffix.",
+        "parameters": [],
+        "returnType": "boolean",
+        "modifiers": []
+      },
+      {
+        "name": "equals",
+        "signature": "equals(Object anObject)",
+        "description": "Compares this string to the specified object.",
+        "parameters": [],
+        "returnType": "boolean",
+        "modifiers": []
+      },
+      {
+        "name": "equalsIgnoreCase",
+        "signature": "equalsIgnoreCase(String anotherString)",
+        "description": "Compares this String to another String, ignoring case\n considerations.",
+        "parameters": [],
+        "returnType": "boolean",
+        "modifiers": []
+      },
+      {
+        "name": "format",
+        "signature": "format(String format,\n Object... args)",
+        "description": "Returns a formatted string using the specified format string and\n arguments.",
+        "parameters": [],
+        "returnType": "static String",
+        "modifiers": []
+      },
+      {
+        "name": "format",
+        "signature": "format(Locale l,\n String format,\n Object... args)",
+        "description": "Returns a formatted string using the specified locale, format string,\n and arguments.",
+        "parameters": [],
+        "returnType": "static String",
+        "modifiers": []
+      },
+      {
+        "name": "formatted",
+        "signature": "formatted(Object... args)",
+        "description": "Formats using this string as the format string, and the supplied\n arguments.",
+        "parameters": [],
+        "returnType": "String",
+        "modifiers": []
+      },
+      {
+        "name": "getBytes",
+        "signature": "getBytes()",
+        "description": "Encodes this String into a sequence of bytes using the\n platform's default charset, storing the result into a new byte array.",
+        "parameters": [],
+        "returnType": "byte[]",
+        "modifiers": []
+      },
+      {
+        "name": "getBytes",
+        "signature": "getBytes(int srcBegin,\n int srcEnd,\n byte[] dst,\n int dstBegin)",
+        "description": "Deprecated.\nThis method does not properly convert characters into\n bytes.",
+        "parameters": [],
+        "returnType": "void",
+        "modifiers": []
+      },
+      {
+        "name": "getBytes",
+        "signature": "getBytes(String charsetName)",
+        "description": "Encodes this String into a sequence of bytes using the named\n charset, storing the result into a new byte array.",
+        "parameters": [],
+        "returnType": "byte[]",
+        "modifiers": []
+      },
+      {
+        "name": "getBytes",
+        "signature": "getBytes(Charset charset)",
+        "description": "Encodes this String into a sequence of bytes using the given\n charset, storing the result into a\n new byte array.",
+        "parameters": [],
+        "returnType": "byte[]",
+        "modifiers": []
+      },
+      {
+        "name": "getChars",
+        "signature": "getChars(int srcBegin,\n int srcEnd,\n char[] dst,\n int dstBegin)",
+        "description": "Copies characters from this string into the destination character\n array.",
+        "parameters": [],
+        "returnType": "void",
+        "modifiers": []
+      },
+      {
+        "name": "hashCode",
+        "signature": "hashCode()",
+        "description": "Returns a hash code for this string.",
+        "parameters": [],
+        "returnType": "int",
+        "modifiers": []
+      },
+      {
+        "name": "indent",
+        "signature": "indent(int n)",
+        "description": "Adjusts the indentation of each line of this string based on the value of\n n, and normalizes line termination characters.",
+        "parameters": [],
+        "returnType": "String",
+        "modifiers": []
+      },
+      {
+        "name": "indexOf",
+        "signature": "indexOf(int ch)",
+        "description": "Returns the index within this string of the first occurrence of\n the specified character.",
+        "parameters": [],
+        "returnType": "int",
+        "modifiers": []
+      },
+      {
+        "name": "indexOf",
+        "signature": "indexOf(int ch,\n int fromIndex)",
+        "description": "Returns the index within this string of the first occurrence of the\n specified character, starting the search at the specified index.",
+        "parameters": [],
+        "returnType": "int",
+        "modifiers": []
+      },
+      {
+        "name": "indexOf",
+        "signature": "indexOf(String str)",
+        "description": "Returns the index within this string of the first occurrence of the\n specified substring.",
+        "parameters": [],
+        "returnType": "int",
+        "modifiers": []
+      },
+      {
+        "name": "indexOf",
+        "signature": "indexOf(String str,\n int fromIndex)",
+        "description": "Returns the index within this string of the first occurrence of the\n specified substring, starting at the specified index.",
+        "parameters": [],
+        "returnType": "int",
+        "modifiers": []
+      },
+      {
+        "name": "intern",
+        "signature": "intern()",
+        "description": "Returns a canonical representation for the string object.",
+        "parameters": [],
+        "returnType": "String",
+        "modifiers": []
+      },
+      {
+        "name": "isBlank",
+        "signature": "isBlank()",
+        "description": "Returns true if the string is empty or contains only\n white space codepoints,\n otherwise false.",
+        "parameters": [],
+        "returnType": "boolean",
+        "modifiers": []
+      },
+      {
+        "name": "isEmpty",
+        "signature": "isEmpty()",
+        "description": "Returns true if, and only if, length() is 0.",
+        "parameters": [],
+        "returnType": "boolean",
+        "modifiers": []
+      },
+      {
+        "name": "join",
+        "signature": "join(CharSequence delimiter,\n CharSequence... elements)",
+        "description": "Returns a new String composed of copies of the\n CharSequence elements joined together with a copy of\n the specified delimiter.",
+        "parameters": [],
+        "returnType": "static String",
+        "modifiers": []
+      },
+      {
+        "name": "join",
+        "signature": "join(CharSequence delimiter,\n Iterable<? extends CharSequence> elements)",
+        "description": "Returns a new String composed of copies of the\n CharSequence elements joined together with a copy of the\n specified delimiter.",
+        "parameters": [],
+        "returnType": "static String",
+        "modifiers": []
+      },
+      {
+        "name": "lastIndexOf",
+        "signature": "lastIndexOf(int ch)",
+        "description": "Returns the index within this string of the last occurrence of\n the specified character.",
+        "parameters": [],
+        "returnType": "int",
+        "modifiers": []
+      },
+      {
+        "name": "lastIndexOf",
+        "signature": "lastIndexOf(int ch,\n int fromIndex)",
+        "description": "Returns the index within this string of the last occurrence of\n the specified character, searching backward starting at the\n specified index.",
+        "parameters": [],
+        "returnType": "int",
+        "modifiers": []
+      },
+      {
+        "name": "lastIndexOf",
+        "signature": "lastIndexOf(String str)",
+        "description": "Returns the index within this string of the last occurrence of the\n specified substring.",
+        "parameters": [],
+        "returnType": "int",
+        "modifiers": []
+      },
+      {
+        "name": "lastIndexOf",
+        "signature": "lastIndexOf(String str,\n int fromIndex)",
+        "description": "Returns the index within this string of the last occurrence of the\n specified substring, searching backward starting at the specified index.",
+        "parameters": [],
+        "returnType": "int",
+        "modifiers": []
+      },
+      {
+        "name": "length",
+        "signature": "length()",
+        "description": "Returns the length of this string.",
+        "parameters": [],
+        "returnType": "int",
+        "modifiers": []
+      },
+      {
+        "name": "lines",
+        "signature": "lines()",
+        "description": "Returns a stream of lines extracted from this string,\n separated by line terminators.",
+        "parameters": [],
+        "returnType": "Stream<String>",
+        "modifiers": []
+      },
+      {
+        "name": "matches",
+        "signature": "matches(String regex)",
+        "description": "Tells whether or not this string matches the given regular expression.",
+        "parameters": [],
+        "returnType": "boolean",
+        "modifiers": []
+      },
+      {
+        "name": "offsetByCodePoints",
+        "signature": "offsetByCodePoints(int index,\n int codePointOffset)",
+        "description": "Returns the index within this String that is\n offset from the given index by\n codePointOffset code points.",
+        "parameters": [],
+        "returnType": "int",
+        "modifiers": []
+      },
+      {
+        "name": "regionMatches",
+        "signature": "regionMatches(boolean ignoreCase,\n int toffset,\n String other,\n int ooffset,\n int len)",
+        "description": "Tests if two string regions are equal.",
+        "parameters": [],
+        "returnType": "boolean",
+        "modifiers": []
+      },
+      {
+        "name": "regionMatches",
+        "signature": "regionMatches(int toffset,\n String other,\n int ooffset,\n int len)",
+        "description": "Tests if two string regions are equal.",
+        "parameters": [],
+        "returnType": "boolean",
+        "modifiers": []
+      },
+      {
+        "name": "repeat",
+        "signature": "repeat(int count)",
+        "description": "Returns a string whose value is the concatenation of this\n string repeated count times.",
+        "parameters": [],
+        "returnType": "String",
+        "modifiers": []
+      },
+      {
+        "name": "replace",
+        "signature": "replace(char oldChar,\n char newChar)",
+        "description": "Returns a string resulting from replacing all occurrences of\n oldChar in this string with newChar.",
+        "parameters": [],
+        "returnType": "String",
+        "modifiers": []
+      },
+      {
+        "name": "replace",
+        "signature": "replace(CharSequence target,\n CharSequence replacement)",
+        "description": "Replaces each substring of this string that matches the literal target\n sequence with the specified literal replacement sequence.",
+        "parameters": [],
+        "returnType": "String",
+        "modifiers": []
+      },
+      {
+        "name": "replaceAll",
+        "signature": "replaceAll(String regex,\n String replacement)",
+        "description": "Replaces each substring of this string that matches the given regular expression with the\n given replacement.",
+        "parameters": [],
+        "returnType": "String",
+        "modifiers": []
+      },
+      {
+        "name": "replaceFirst",
+        "signature": "replaceFirst(String regex,\n String replacement)",
+        "description": "Replaces the first substring of this string that matches the given regular expression with the\n given replacement.",
+        "parameters": [],
+        "returnType": "String",
+        "modifiers": []
+      },
+      {
+        "name": "resolveConstantDesc",
+        "signature": "resolveConstantDesc(MethodHandles.Lookup lookup)",
+        "description": "Resolves this instance as a ConstantDesc, the result of which is\n the instance itself.",
+        "parameters": [],
+        "returnType": "String",
+        "modifiers": []
+      },
+      {
+        "name": "split",
+        "signature": "split(String regex)",
+        "description": "Splits this string around matches of the given regular expression.",
+        "parameters": [],
+        "returnType": "String[]",
+        "modifiers": []
+      },
+      {
+        "name": "split",
+        "signature": "split(String regex,\n int limit)",
+        "description": "Splits this string around matches of the given\n regular expression.",
+        "parameters": [],
+        "returnType": "String[]",
+        "modifiers": []
+      },
+      {
+        "name": "startsWith",
+        "signature": "startsWith(String prefix)",
+        "description": "Tests if this string starts with the specified prefix.",
+        "parameters": [],
+        "returnType": "boolean",
+        "modifiers": []
+      },
+      {
+        "name": "startsWith",
+        "signature": "startsWith(String prefix,\n int toffset)",
+        "description": "Tests if the substring of this string beginning at the\n specified index starts with the specified prefix.",
+        "parameters": [],
+        "returnType": "boolean",
+        "modifiers": []
+      },
+      {
+        "name": "strip",
+        "signature": "strip()",
+        "description": "Returns a string whose value is this string, with all leading\n and trailing white space\n removed.",
+        "parameters": [],
+        "returnType": "String",
+        "modifiers": []
+      },
+      {
+        "name": "stripIndent",
+        "signature": "stripIndent()",
+        "description": "Returns a string whose value is this string, with incidental\n white space removed from\n the beginning and end of every line.",
+        "parameters": [],
+        "returnType": "String",
+        "modifiers": []
+      },
+      {
+        "name": "stripLeading",
+        "signature": "stripLeading()",
+        "description": "Returns a string whose value is this string, with all leading\n white space removed.",
+        "parameters": [],
+        "returnType": "String",
+        "modifiers": []
+      },
+      {
+        "name": "stripTrailing",
+        "signature": "stripTrailing()",
+        "description": "Returns a string whose value is this string, with all trailing\n white space removed.",
+        "parameters": [],
+        "returnType": "String",
+        "modifiers": []
+      },
+      {
+        "name": "subSequence",
+        "signature": "subSequence(int beginIndex,\n int endIndex)",
+        "description": "Returns a character sequence that is a subsequence of this sequence.",
+        "parameters": [],
+        "returnType": "CharSequence",
+        "modifiers": []
+      },
+      {
+        "name": "substring",
+        "signature": "substring(int beginIndex)",
+        "description": "Returns a string that is a substring of this string.",
+        "parameters": [],
+        "returnType": "String",
+        "modifiers": []
+      },
+      {
+        "name": "substring",
+        "signature": "substring(int beginIndex,\n int endIndex)",
+        "description": "Returns a string that is a substring of this string.",
+        "parameters": [],
+        "returnType": "String",
+        "modifiers": []
+      },
+      {
+        "name": "toCharArray",
+        "signature": "toCharArray()",
+        "description": "Converts this string to a new character array.",
+        "parameters": [],
+        "returnType": "char[]",
+        "modifiers": []
+      },
+      {
+        "name": "toLowerCase",
+        "signature": "toLowerCase()",
+        "description": "Converts all of the characters in this String to lower\n case using the rules of the default locale.",
+        "parameters": [],
+        "returnType": "String",
+        "modifiers": []
+      },
+      {
+        "name": "toLowerCase",
+        "signature": "toLowerCase(Locale locale)",
+        "description": "Converts all of the characters in this String to lower\n case using the rules of the given Locale.",
+        "parameters": [],
+        "returnType": "String",
+        "modifiers": []
+      },
+      {
+        "name": "toString",
+        "signature": "toString()",
+        "description": "This object (which is already a string!)",
+        "parameters": [],
+        "returnType": "String",
+        "modifiers": []
+      },
+      {
+        "name": "toUpperCase",
+        "signature": "toUpperCase()",
+        "description": "Converts all of the characters in this String to upper\n case using the rules of the default locale.",
+        "parameters": [],
+        "returnType": "String",
+        "modifiers": []
+      },
+      {
+        "name": "toUpperCase",
+        "signature": "toUpperCase(Locale locale)",
+        "description": "Converts all of the characters in this String to upper\n case using the rules of the given Locale.",
+        "parameters": [],
+        "returnType": "String",
+        "modifiers": []
+      },
+      {
+        "name": "transform",
+        "signature": "transform(Function<? super String,? extends R> f)",
+        "description": "This method allows the application of a function to this\n string.",
+        "parameters": [],
+        "returnType": "<R> R",
+        "modifiers": []
+      },
+      {
+        "name": "translateEscapes",
+        "signature": "translateEscapes()",
+        "description": "Returns a string whose value is this string, with escape sequences\n translated as if in a string literal.",
+        "parameters": [],
+        "returnType": "String",
+        "modifiers": []
+      },
+      {
+        "name": "trim",
+        "signature": "trim()",
+        "description": "Returns a string whose value is this string, with all leading\n and trailing space removed, where space is defined\n as any character whose codepoint is less than or equal to\n 'U+0020' (the space character).",
+        "parameters": [],
+        "returnType": "String",
+        "modifiers": []
+      },
+      {
+        "name": "valueOf",
+        "signature": "valueOf(boolean b)",
+        "description": "Returns the string representation of the boolean argument.",
+        "parameters": [],
+        "returnType": "static String",
+        "modifiers": []
+      },
+      {
+        "name": "valueOf",
+        "signature": "valueOf(char c)",
+        "description": "Returns the string representation of the char\n argument.",
+        "parameters": [],
+        "returnType": "static String",
+        "modifiers": []
+      },
+      {
+        "name": "valueOf",
+        "signature": "valueOf(char[] data)",
+        "description": "Returns the string representation of the char array\n argument.",
+        "parameters": [],
+        "returnType": "static String",
+        "modifiers": []
+      },
+      {
+        "name": "valueOf",
+        "signature": "valueOf(char[] data,\n int offset,\n int count)",
+        "description": "Returns the string representation of a specific subarray of the\n char array argument.",
+        "parameters": [],
+        "returnType": "static String",
+        "modifiers": []
+      },
+      {
+        "name": "valueOf",
+        "signature": "valueOf(double d)",
+        "description": "Returns the string representation of the double argument.",
+        "parameters": [],
+        "returnType": "static String",
+        "modifiers": []
+      },
+      {
+        "name": "valueOf",
+        "signature": "valueOf(float f)",
+        "description": "Returns the string representation of the float argument.",
+        "parameters": [],
+        "returnType": "static String",
+        "modifiers": []
+      },
+      {
+        "name": "valueOf",
+        "signature": "valueOf(int i)",
+        "description": "Returns the string representation of the int argument.",
+        "parameters": [],
+        "returnType": "static String",
+        "modifiers": []
+      },
+      {
+        "name": "valueOf",
+        "signature": "valueOf(long l)",
+        "description": "Returns the string representation of the long argument.",
+        "parameters": [],
+        "returnType": "static String",
+        "modifiers": []
+      },
+      {
+        "name": "valueOf",
+        "signature": "valueOf(Object obj)",
+        "description": "Returns the string representation of the Object argument.",
+        "parameters": [],
+        "returnType": "static String",
+        "modifiers": []
+      }
+    ],
+    "constructors": [
+      {
+        "name": "String",
+        "signature": "String()",
+        "description": "Initializes a newly created String object so that it represents\n an empty character sequence.",
+        "parameters": [],
+        "returnType": "",
+        "modifiers": [
+          "public"
+        ]
+      },
+      {
+        "name": "String",
+        "signature": "String(byte[] bytes)",
+        "description": "Constructs a new String by decoding the specified array of bytes\n using the platform's default charset.",
+        "parameters": [],
+        "returnType": "",
+        "modifiers": [
+          "public"
+        ]
+      },
+      {
+        "name": "String",
+        "signature": "String(byte[] ascii,\n int hibyte)",
+        "description": "Deprecated.\nThis method does not properly convert bytes into\n characters.",
+        "parameters": [],
+        "returnType": "",
+        "modifiers": [
+          "public"
+        ]
+      },
+      {
+        "name": "String",
+        "signature": "String(byte[] bytes,\n int offset,\n int length)",
+        "description": "Constructs a new String by decoding the specified subarray of\n bytes using the platform's default charset.",
+        "parameters": [],
+        "returnType": "",
+        "modifiers": [
+          "public"
+        ]
+      },
+      {
+        "name": "String",
+        "signature": "String(byte[] ascii,\n int hibyte,\n int offset,\n int count)",
+        "description": "Deprecated.\nThis method does not properly convert bytes into characters.",
+        "parameters": [],
+        "returnType": "",
+        "modifiers": [
+          "public"
+        ]
+      },
+      {
+        "name": "String",
+        "signature": "String(byte[] bytes,\n int offset,\n int length,\n String charsetName)",
+        "description": "Constructs a new String by decoding the specified subarray of\n bytes using the specified charset.",
+        "parameters": [],
+        "returnType": "",
+        "modifiers": [
+          "public"
+        ]
+      },
+      {
+        "name": "String",
+        "signature": "String(byte[] bytes,\n int offset,\n int length,\n Charset charset)",
+        "description": "Constructs a new String by decoding the specified subarray of\n bytes using the specified charset.",
+        "parameters": [],
+        "returnType": "",
+        "modifiers": [
+          "public"
+        ]
+      },
+      {
+        "name": "String",
+        "signature": "String(byte[] bytes,\n String charsetName)",
+        "description": "Constructs a new String by decoding the specified array of bytes\n using the specified charset.",
+        "parameters": [],
+        "returnType": "",
+        "modifiers": [
+          "public"
+        ]
+      },
+      {
+        "name": "String",
+        "signature": "String(byte[] bytes,\n Charset charset)",
+        "description": "Constructs a new String by decoding the specified array of\n bytes using the specified charset.",
+        "parameters": [],
+        "returnType": "",
+        "modifiers": [
+          "public"
+        ]
+      },
+      {
+        "name": "String",
+        "signature": "String(char[] value)",
+        "description": "Allocates a new String so that it represents the sequence of\n characters currently contained in the character array argument.",
+        "parameters": [],
+        "returnType": "",
+        "modifiers": [
+          "public"
+        ]
+      },
+      {
+        "name": "String",
+        "signature": "String(char[] value,\n int offset,\n int count)",
+        "description": "Allocates a new String that contains characters from a subarray\n of the character array argument.",
+        "parameters": [],
+        "returnType": "",
+        "modifiers": [
+          "public"
+        ]
+      },
+      {
+        "name": "String",
+        "signature": "String(int[] codePoints,\n int offset,\n int count)",
+        "description": "Allocates a new String that contains characters from a subarray\n of the Unicode code point array\n argument.",
+        "parameters": [],
+        "returnType": "",
+        "modifiers": [
+          "public"
+        ]
+      },
+      {
+        "name": "String",
+        "signature": "String(String original)",
+        "description": "Initializes a newly created String object so that it represents\n the same sequence of characters as the argument; in other words, the\n newly created string is a copy of the argument string.",
+        "parameters": [],
+        "returnType": "",
+        "modifiers": [
+          "public"
+        ]
+      },
+      {
+        "name": "String",
+        "signature": "String(StringBuffer buffer)",
+        "description": "Allocates a new string that contains the sequence of characters\n currently contained in the string buffer argument.",
+        "parameters": [],
+        "returnType": "",
+        "modifiers": [
+          "public"
+        ]
+      },
+      {
+        "name": "String",
+        "signature": "String(StringBuilder builder)",
+        "description": "Allocates a new string that contains the sequence of characters\n currently contained in the string builder argument.",
+        "parameters": [],
+        "returnType": "",
+        "modifiers": [
+          "public"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "name": "CASE_INSENSITIVE_ORDER",
+        "type": "static final Comparator<String>",
+        "description": "A Comparator that orders String objects as by\n compareToIgnoreCase.",
+        "modifiers": [
+          "static",
+          "final"
+        ]
+      }
+    ],
+    "examples": [
+      "char data[] = {'a', 'b', 'c'};\n     String str = new String(data);",
+      "List<String> strings = List.of(\"Java\", \"is\", \"cool\");\n     String message = String.join(\" \", strings);\n     // message returned is: \"Java is cool\"\n\n     Set<String> strings =\n         new LinkedHashSet<>(List.of(\"Java\", \"is\", \"very\", \"cool\"));\n     String message = String.join(\"-\", strings);\n     // message returned is: \"Java-is-very-cool\""
+    ],
+    "officialUrl": "https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html",
+    "scrapedAt": "2025-10-23T23:51:16.184Z"
+  },
+  {
+    "className": "Integer",
+    "packageName": "java.lang",
+    "description": "The Integer class wraps a value of the primitive type\n int in an object. An object of type Integer\n contains a single field whose type is int.\n\n In addition, this class provides several methods for converting\n an int to a String and a String to an\n int, as well as other constants and methods useful when\n dealing with an int.\n\n This is a value-based\n class; programmers should treat instances that are\n equal as interchangeable and should not\n use instances for synchronization, or unpredictable behavior may\n occur. For example, in a future release, synchronization may fail.\n\n Implementation note: The implementations of the \"bit twiddling\"\n methods (such as highestOneBit and\n numberOfTrailingZeros) are\n based on material from Henry S. Warren, Jr.'s Hacker's\n Delight, (Addison Wesley, 2002).",
+    "methods": [
+      {
+        "name": "bitCount",
+        "signature": "bitCount(int i)",
+        "description": "Returns the number of one-bits in the two's complement binary\n representation of the specified int value.",
+        "parameters": [],
+        "returnType": "static int",
+        "modifiers": []
+      },
+      {
+        "name": "byteValue",
+        "signature": "byteValue()",
+        "description": "Returns the value of this Integer as a byte\n after a narrowing primitive conversion.",
+        "parameters": [],
+        "returnType": "byte",
+        "modifiers": []
+      },
+      {
+        "name": "compare",
+        "signature": "compare(int x,\n int y)",
+        "description": "Compares two int values numerically.",
+        "parameters": [],
+        "returnType": "static int",
+        "modifiers": []
+      },
+      {
+        "name": "compareTo",
+        "signature": "compareTo(Integer anotherInteger)",
+        "description": "Compares two Integer objects numerically.",
+        "parameters": [],
+        "returnType": "int",
+        "modifiers": []
+      },
+      {
+        "name": "compareUnsigned",
+        "signature": "compareUnsigned(int x,\n int y)",
+        "description": "Compares two int values numerically treating the values\n as unsigned.",
+        "parameters": [],
+        "returnType": "static int",
+        "modifiers": []
+      },
+      {
+        "name": "decode",
+        "signature": "decode(String nm)",
+        "description": "Decodes a String into an Integer.",
+        "parameters": [],
+        "returnType": "static Integer",
+        "modifiers": []
+      },
+      {
+        "name": "describeConstable",
+        "signature": "describeConstable()",
+        "description": "Returns an Optional containing the nominal descriptor for this\n instance, which is the instance itself.",
+        "parameters": [],
+        "returnType": "Optional<Integer>",
+        "modifiers": []
+      },
+      {
+        "name": "divideUnsigned",
+        "signature": "divideUnsigned(int dividend,\n int divisor)",
+        "description": "Returns the unsigned quotient of dividing the first argument by\n the second where each argument and the result is interpreted as\n an unsigned value.",
+        "parameters": [],
+        "returnType": "static int",
+        "modifiers": []
+      },
+      {
+        "name": "doubleValue",
+        "signature": "doubleValue()",
+        "description": "Returns the value of this Integer as a double\n after a widening primitive conversion.",
+        "parameters": [],
+        "returnType": "double",
+        "modifiers": []
+      },
+      {
+        "name": "equals",
+        "signature": "equals(Object obj)",
+        "description": "Compares this object to the specified object.",
+        "parameters": [],
+        "returnType": "boolean",
+        "modifiers": []
+      },
+      {
+        "name": "floatValue",
+        "signature": "floatValue()",
+        "description": "Returns the value of this Integer as a float\n after a widening primitive conversion.",
+        "parameters": [],
+        "returnType": "float",
+        "modifiers": []
+      },
+      {
+        "name": "getInteger",
+        "signature": "getInteger(String nm)",
+        "description": "Determines the integer value of the system property with the\n specified name.",
+        "parameters": [],
+        "returnType": "static Integer",
+        "modifiers": []
+      },
+      {
+        "name": "getInteger",
+        "signature": "getInteger(String nm,\n int val)",
+        "description": "Determines the integer value of the system property with the\n specified name.",
+        "parameters": [],
+        "returnType": "static Integer",
+        "modifiers": []
+      },
+      {
+        "name": "getInteger",
+        "signature": "getInteger(String nm,\n Integer val)",
+        "description": "Returns the integer value of the system property with the\n specified name.",
+        "parameters": [],
+        "returnType": "static Integer",
+        "modifiers": []
+      },
+      {
+        "name": "hashCode",
+        "signature": "hashCode()",
+        "description": "Returns a hash code for this Integer.",
+        "parameters": [],
+        "returnType": "int",
+        "modifiers": []
+      },
+      {
+        "name": "hashCode",
+        "signature": "hashCode(int value)",
+        "description": "Returns a hash code for an int value; compatible with\n Integer.hashCode().",
+        "parameters": [],
+        "returnType": "static int",
+        "modifiers": []
+      },
+      {
+        "name": "highestOneBit",
+        "signature": "highestOneBit(int i)",
+        "description": "Returns an int value with at most a single one-bit, in the\n position of the highest-order (\"leftmost\") one-bit in the specified\n int value.",
+        "parameters": [],
+        "returnType": "static int",
+        "modifiers": []
+      },
+      {
+        "name": "intValue",
+        "signature": "intValue()",
+        "description": "Returns the value of this Integer as an\n int.",
+        "parameters": [],
+        "returnType": "int",
+        "modifiers": []
+      },
+      {
+        "name": "longValue",
+        "signature": "longValue()",
+        "description": "Returns the value of this Integer as a long\n after a widening primitive conversion.",
+        "parameters": [],
+        "returnType": "long",
+        "modifiers": []
+      },
+      {
+        "name": "lowestOneBit",
+        "signature": "lowestOneBit(int i)",
+        "description": "Returns an int value with at most a single one-bit, in the\n position of the lowest-order (\"rightmost\") one-bit in the specified\n int value.",
+        "parameters": [],
+        "returnType": "static int",
+        "modifiers": []
+      },
+      {
+        "name": "max",
+        "signature": "max(int a,\n int b)",
+        "description": "Returns the greater of two int values\n as if by calling Math.max.",
+        "parameters": [],
+        "returnType": "static int",
+        "modifiers": []
+      },
+      {
+        "name": "min",
+        "signature": "min(int a,\n int b)",
+        "description": "Returns the smaller of two int values\n as if by calling Math.min.",
+        "parameters": [],
+        "returnType": "static int",
+        "modifiers": []
+      },
+      {
+        "name": "numberOfLeadingZeros",
+        "signature": "numberOfLeadingZeros(int i)",
+        "description": "Returns the number of zero bits preceding the highest-order\n (\"leftmost\") one-bit in the two's complement binary representation\n of the specified int value.",
+        "parameters": [],
+        "returnType": "static int",
+        "modifiers": []
+      },
+      {
+        "name": "numberOfTrailingZeros",
+        "signature": "numberOfTrailingZeros(int i)",
+        "description": "Returns the number of zero bits following the lowest-order (\"rightmost\")\n one-bit in the two's complement binary representation of the specified\n int value.",
+        "parameters": [],
+        "returnType": "static int",
+        "modifiers": []
+      },
+      {
+        "name": "parseInt",
+        "signature": "parseInt(CharSequence s,\n int beginIndex,\n int endIndex,\n int radix)",
+        "description": "Parses the CharSequence argument as a signed int in the\n specified radix, beginning at the specified beginIndex\n and extending to endIndex - 1.",
+        "parameters": [],
+        "returnType": "static int",
+        "modifiers": []
+      },
+      {
+        "name": "parseInt",
+        "signature": "parseInt(String s)",
+        "description": "Parses the string argument as a signed decimal integer.",
+        "parameters": [],
+        "returnType": "static int",
+        "modifiers": []
+      },
+      {
+        "name": "parseInt",
+        "signature": "parseInt(String s,\n int radix)",
+        "description": "Parses the string argument as a signed integer in the radix\n specified by the second argument.",
+        "parameters": [],
+        "returnType": "static int",
+        "modifiers": []
+      },
+      {
+        "name": "parseUnsignedInt",
+        "signature": "parseUnsignedInt(CharSequence s,\n int beginIndex,\n int endIndex,\n int radix)",
+        "description": "Parses the CharSequence argument as an unsigned int in\n the specified radix, beginning at the specified\n beginIndex and extending to endIndex - 1.",
+        "parameters": [],
+        "returnType": "static int",
+        "modifiers": []
+      },
+      {
+        "name": "parseUnsignedInt",
+        "signature": "parseUnsignedInt(String s)",
+        "description": "Parses the string argument as an unsigned decimal integer.",
+        "parameters": [],
+        "returnType": "static int",
+        "modifiers": []
+      },
+      {
+        "name": "parseUnsignedInt",
+        "signature": "parseUnsignedInt(String s,\n int radix)",
+        "description": "Parses the string argument as an unsigned integer in the radix\n specified by the second argument.",
+        "parameters": [],
+        "returnType": "static int",
+        "modifiers": []
+      },
+      {
+        "name": "remainderUnsigned",
+        "signature": "remainderUnsigned(int dividend,\n int divisor)",
+        "description": "Returns the unsigned remainder from dividing the first argument\n by the second where each argument and the result is interpreted\n as an unsigned value.",
+        "parameters": [],
+        "returnType": "static int",
+        "modifiers": []
+      },
+      {
+        "name": "resolveConstantDesc",
+        "signature": "resolveConstantDesc(MethodHandles.Lookup lookup)",
+        "description": "Resolves this instance as a ConstantDesc, the result of which is\n the instance itself.",
+        "parameters": [],
+        "returnType": "Integer",
+        "modifiers": []
+      },
+      {
+        "name": "reverse",
+        "signature": "reverse(int i)",
+        "description": "Returns the value obtained by reversing the order of the bits in the\n two's complement binary representation of the specified int\n value.",
+        "parameters": [],
+        "returnType": "static int",
+        "modifiers": []
+      },
+      {
+        "name": "reverseBytes",
+        "signature": "reverseBytes(int i)",
+        "description": "Returns the value obtained by reversing the order of the bytes in the\n two's complement representation of the specified int value.",
+        "parameters": [],
+        "returnType": "static int",
+        "modifiers": []
+      },
+      {
+        "name": "rotateLeft",
+        "signature": "rotateLeft(int i,\n int distance)",
+        "description": "Returns the value obtained by rotating the two's complement binary\n representation of the specified int value left by the\n specified number of bits.",
+        "parameters": [],
+        "returnType": "static int",
+        "modifiers": []
+      },
+      {
+        "name": "rotateRight",
+        "signature": "rotateRight(int i,\n int distance)",
+        "description": "Returns the value obtained by rotating the two's complement binary\n representation of the specified int value right by the\n specified number of bits.",
+        "parameters": [],
+        "returnType": "static int",
+        "modifiers": []
+      },
+      {
+        "name": "shortValue",
+        "signature": "shortValue()",
+        "description": "Returns the value of this Integer as a short\n after a narrowing primitive conversion.",
+        "parameters": [],
+        "returnType": "short",
+        "modifiers": []
+      },
+      {
+        "name": "signum",
+        "signature": "signum(int i)",
+        "description": "Returns the signum function of the specified int value.",
+        "parameters": [],
+        "returnType": "static int",
+        "modifiers": []
+      },
+      {
+        "name": "sum",
+        "signature": "sum(int a,\n int b)",
+        "description": "Adds two integers together as per the + operator.",
+        "parameters": [],
+        "returnType": "static int",
+        "modifiers": []
+      },
+      {
+        "name": "toBinaryString",
+        "signature": "toBinaryString(int i)",
+        "description": "Returns a string representation of the integer argument as an\n unsigned integer in base 2.",
+        "parameters": [],
+        "returnType": "static String",
+        "modifiers": []
+      },
+      {
+        "name": "toHexString",
+        "signature": "toHexString(int i)",
+        "description": "Returns a string representation of the integer argument as an\n unsigned integer in base 16.",
+        "parameters": [],
+        "returnType": "static String",
+        "modifiers": []
+      },
+      {
+        "name": "toOctalString",
+        "signature": "toOctalString(int i)",
+        "description": "Returns a string representation of the integer argument as an\n unsigned integer in base 8.",
+        "parameters": [],
+        "returnType": "static String",
+        "modifiers": []
+      },
+      {
+        "name": "toString",
+        "signature": "toString()",
+        "description": "Returns a String object representing this\n Integer's value.",
+        "parameters": [],
+        "returnType": "String",
+        "modifiers": []
+      },
+      {
+        "name": "toString",
+        "signature": "toString(int i)",
+        "description": "Returns a String object representing the\n specified integer.",
+        "parameters": [],
+        "returnType": "static String",
+        "modifiers": []
+      },
+      {
+        "name": "toString",
+        "signature": "toString(int i,\n int radix)",
+        "description": "Returns a string representation of the first argument in the\n radix specified by the second argument.",
+        "parameters": [],
+        "returnType": "static String",
+        "modifiers": []
+      },
+      {
+        "name": "toUnsignedLong",
+        "signature": "toUnsignedLong(int x)",
+        "description": "Converts the argument to a long by an unsigned\n conversion.",
+        "parameters": [],
+        "returnType": "static long",
+        "modifiers": []
+      },
+      {
+        "name": "toUnsignedString",
+        "signature": "toUnsignedString(int i)",
+        "description": "Returns a string representation of the argument as an unsigned\n decimal value.",
+        "parameters": [],
+        "returnType": "static String",
+        "modifiers": []
+      },
+      {
+        "name": "toUnsignedString",
+        "signature": "toUnsignedString(int i,\n int radix)",
+        "description": "Returns a string representation of the first argument as an\n unsigned integer value in the radix specified by the second\n argument.",
+        "parameters": [],
+        "returnType": "static String",
+        "modifiers": []
+      },
+      {
+        "name": "valueOf",
+        "signature": "valueOf(int i)",
+        "description": "Returns an Integer instance representing the specified\n int value.",
+        "parameters": [],
+        "returnType": "static Integer",
+        "modifiers": []
+      },
+      {
+        "name": "valueOf",
+        "signature": "valueOf(String s)",
+        "description": "Returns an Integer object holding the\n value of the specified String.",
+        "parameters": [],
+        "returnType": "static Integer",
+        "modifiers": []
+      },
+      {
+        "name": "valueOf",
+        "signature": "valueOf(String s,\n int radix)",
+        "description": "Returns an Integer object holding the value\n extracted from the specified String when parsed\n with the radix given by the second argument.",
+        "parameters": [],
+        "returnType": "static Integer",
+        "modifiers": []
+      }
+    ],
+    "constructors": [
+      {
+        "name": "Integer",
+        "signature": "Integer(int value)",
+        "description": "Deprecated, for removal: This API element is subject to removal in a future version.\nIt is rarely appropriate to use this constructor.",
+        "parameters": [],
+        "returnType": "",
+        "modifiers": [
+          "public"
+        ]
+      },
+      {
+        "name": "Integer",
+        "signature": "Integer(String s)",
+        "description": "Deprecated, for removal: This API element is subject to removal in a future version.\nIt is rarely appropriate to use this constructor.",
+        "parameters": [],
+        "returnType": "",
+        "modifiers": [
+          "public"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "name": "BYTES",
+        "type": "static final int",
+        "description": "The number of bytes used to represent an int value in two's\n complement binary form.",
+        "modifiers": [
+          "static",
+          "final"
+        ]
+      },
+      {
+        "name": "MAX_VALUE",
+        "type": "static final int",
+        "description": "A constant holding the maximum value an int can\n have, 231-1.",
+        "modifiers": [
+          "static",
+          "final"
+        ]
+      },
+      {
+        "name": "MIN_VALUE",
+        "type": "static final int",
+        "description": "A constant holding the minimum value an int can\n have, -231.",
+        "modifiers": [
+          "static",
+          "final"
+        ]
+      },
+      {
+        "name": "SIZE",
+        "type": "static final int",
+        "description": "The number of bits used to represent an int value in two's\n complement binary form.",
+        "modifiers": [
+          "static",
+          "final"
+        ]
+      },
+      {
+        "name": "TYPE",
+        "type": "static final Class<Integer>",
+        "description": "The Class instance representing the primitive type\n int.",
+        "modifiers": [
+          "static",
+          "final"
+        ]
+      }
+    ],
+    "examples": [
+      "Integer result = getInteger(nm, null);\n return (result == null) ? new Integer(val) : result;"
+    ],
+    "officialUrl": "https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Integer.html",
+    "scrapedAt": "2025-10-23T23:51:17.293Z"
+  },
+  {
+    "className": "Object",
+    "packageName": "java.lang",
+    "description": "Class Object is the root of the class hierarchy.\n Every class has Object as a superclass. All objects,\n including arrays, implement the methods of this class.",
+    "methods": [
+      {
+        "name": "clone",
+        "signature": "clone()",
+        "description": "Creates and returns a copy of this object.",
+        "parameters": [],
+        "returnType": "protected Object",
+        "modifiers": []
+      },
+      {
+        "name": "equals",
+        "signature": "equals(Object obj)",
+        "description": "Indicates whether some other object is \"equal to\" this one.",
+        "parameters": [],
+        "returnType": "boolean",
+        "modifiers": []
+      },
+      {
+        "name": "finalize",
+        "signature": "finalize()",
+        "description": "Deprecated.\nThe finalization mechanism is inherently problematic.",
+        "parameters": [],
+        "returnType": "protected void",
+        "modifiers": []
+      },
+      {
+        "name": "getClass",
+        "signature": "getClass()",
+        "description": "Returns the runtime class of this Object.",
+        "parameters": [],
+        "returnType": "final Class<?>",
+        "modifiers": []
+      },
+      {
+        "name": "hashCode",
+        "signature": "hashCode()",
+        "description": "Returns a hash code value for the object.",
+        "parameters": [],
+        "returnType": "int",
+        "modifiers": []
+      },
+      {
+        "name": "notify",
+        "signature": "notify()",
+        "description": "Wakes up a single thread that is waiting on this object's\n monitor.",
+        "parameters": [],
+        "returnType": "final void",
+        "modifiers": []
+      },
+      {
+        "name": "notifyAll",
+        "signature": "notifyAll()",
+        "description": "Wakes up all threads that are waiting on this object's monitor.",
+        "parameters": [],
+        "returnType": "final void",
+        "modifiers": []
+      },
+      {
+        "name": "toString",
+        "signature": "toString()",
+        "description": "Returns a string representation of the object.",
+        "parameters": [],
+        "returnType": "String",
+        "modifiers": []
+      },
+      {
+        "name": "wait",
+        "signature": "wait()",
+        "description": "Causes the current thread to wait until it is awakened, typically\n by being notified or interrupted.",
+        "parameters": [],
+        "returnType": "final void",
+        "modifiers": []
+      },
+      {
+        "name": "wait",
+        "signature": "wait(long timeoutMillis)",
+        "description": "Causes the current thread to wait until it is awakened, typically\n by being notified or interrupted, or until a\n certain amount of real time has elapsed.",
+        "parameters": [],
+        "returnType": "final void",
+        "modifiers": []
+      },
+      {
+        "name": "wait",
+        "signature": "wait(long timeoutMillis,\n int nanos)",
+        "description": "Causes the current thread to wait until it is awakened, typically\n by being notified or interrupted, or until a\n certain amount of real time has elapsed.",
+        "parameters": [],
+        "returnType": "final void",
+        "modifiers": []
+      }
+    ],
+    "constructors": [
+      {
+        "name": "Object",
+        "signature": "Object()",
+        "description": "Constructs a new object.",
+        "parameters": [],
+        "returnType": "",
+        "modifiers": [
+          "public"
+        ]
+      }
+    ],
+    "fields": [],
+    "examples": [
+      "@Override\n     protected void finalize() throws Throwable {\n         try {\n             ... // cleanup subclass state\n         } finally {\n             super.finalize();\n         }\n     }"
+    ],
+    "officialUrl": "https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html",
+    "scrapedAt": "2025-10-23T23:51:18.348Z"
+  },
+  {
+    "className": "File",
+    "packageName": "java.io",
+    "description": "An abstract representation of file and directory pathnames.\n\n  User interfaces and operating systems use system-dependent pathname\n strings to name files and directories.  This class presents an\n abstract, system-independent view of hierarchical pathnames.  An\n abstract pathname has two components:\n\n \n  An optional system-dependent prefix string,\n      such as a disk-drive specifier, \"/\" for the UNIX root\n      directory, or \"\\\\\\\\\" for a Microsoft Windows UNC pathname, and\n  A sequence of zero or more string names.\n \n\n The first name in an abstract pathname may be a directory name or, in the\n case of Microsoft Windows UNC pathnames, a hostname.  Each subsequent name\n in an abstract pathname denotes a directory; the last name may denote\n either a directory or a file.  The empty abstract pathname has no\n prefix and an empty name sequence.\n\n  The conversion of a pathname string to or from an abstract pathname is\n inherently system-dependent.  When an abstract pathname is converted into a\n pathname string, each name is separated from the next by a single copy of\n the default separator character.  The default name-separator\n character is defined by the system property file.separator, and\n is made available in the public static fields separator and separatorChar of this class.\n When a pathname string is converted into an abstract pathname, the names\n within it may be separated by the default name-separator character or by any\n other name-separator character that is supported by the underlying system.\n\n  A pathname, whether abstract or in string form, may be either\n absolute or relative.  An absolute pathname is complete in\n that no other information is required in order to locate the file that it\n denotes.  A relative pathname, in contrast, must be interpreted in terms of\n information taken from some other pathname.  By default the classes in the\n java.io package always resolve relative pathnames against the\n current user directory.  This directory is named by the system property\n user.dir, and is typically the directory in which the Java\n virtual machine was invoked.\n\n  The parent of an abstract pathname may be obtained by invoking\n the getParent() method of this class and consists of the pathname's\n prefix and each name in the pathname's name sequence except for the last.\n Each directory's absolute pathname is an ancestor of any File\n object with an absolute abstract pathname which begins with the directory's\n absolute pathname.  For example, the directory denoted by the abstract\n pathname \"/usr\" is an ancestor of the directory denoted by the\n pathname \"/usr/local/bin\".\n\n  The prefix concept is used to handle root directories on UNIX platforms,\n and drive specifiers, root directories and UNC pathnames on Microsoft Windows platforms,\n as follows:\n\n \n\n  For UNIX platforms, the prefix of an absolute pathname is always\n \"/\".  Relative pathnames have no prefix.  The abstract pathname\n denoting the root directory has the prefix \"/\" and an empty\n name sequence.\n\n  For Microsoft Windows platforms, the prefix of a pathname that contains a drive\n specifier consists of the drive letter followed by \":\" and\n possibly followed by \"\\\\\" if the pathname is absolute.  The\n prefix of a UNC pathname is \"\\\\\\\\\"; the hostname and the share\n name are the first two names in the name sequence.  A relative pathname that\n does not specify a drive has no prefix.\n\n \n\n  Instances of this class may or may not denote an actual file-system\n object such as a file or a directory.  If it does denote such an object\n then that object resides in a partition.  A partition is an\n operating system-specific portion of storage for a file system.  A single\n storage device (e.g. a physical disk-drive, flash memory, CD-ROM) may\n contain multiple partitions.  The object, if any, will reside on the\n partition named by some ancestor of the absolute\n form of this pathname.\n\n  A file system may implement restrictions to certain operations on the\n actual file-system object, such as reading, writing, and executing.  These\n restrictions are collectively known as access permissions.  The file\n system may have multiple sets of access permissions on a single object.\n For example, one set may apply to the object's owner, and another\n may apply to all other users.  The access permissions on an object may\n cause some methods in this class to fail.\n\n  Instances of the File class are immutable; that is, once\n created, the abstract pathname represented by a File object\n will never change.\n\n Interoperability with java.nio.file package\n\n  The java.nio.file\n package defines interfaces and classes for the Java virtual machine to access\n files, file attributes, and file systems. This API may be used to overcome\n many of the limitations of the java.io.File class.\n The toPath method may be used to obtain a Path that uses the abstract path represented by a File object to\n locate a file. The resulting Path may be used with the Files class to provide more efficient and extensive access to\n additional file operations, file attributes, and I/O exceptions to help\n diagnose errors when an operation on a file fails.",
+    "methods": [
+      {
+        "name": "canExecute",
+        "signature": "canExecute()",
+        "description": "Tests whether the application can execute the file denoted by this\n abstract pathname.",
+        "parameters": [],
+        "returnType": "boolean",
+        "modifiers": []
+      },
+      {
+        "name": "canRead",
+        "signature": "canRead()",
+        "description": "Tests whether the application can read the file denoted by this\n abstract pathname.",
+        "parameters": [],
+        "returnType": "boolean",
+        "modifiers": []
+      },
+      {
+        "name": "canWrite",
+        "signature": "canWrite()",
+        "description": "Tests whether the application can modify the file denoted by this\n abstract pathname.",
+        "parameters": [],
+        "returnType": "boolean",
+        "modifiers": []
+      },
+      {
+        "name": "compareTo",
+        "signature": "compareTo(File pathname)",
+        "description": "Compares two abstract pathnames lexicographically.",
+        "parameters": [],
+        "returnType": "int",
+        "modifiers": []
+      },
+      {
+        "name": "createNewFile",
+        "signature": "createNewFile()",
+        "description": "Atomically creates a new, empty file named by this abstract pathname if\n and only if a file with this name does not yet exist.",
+        "parameters": [],
+        "returnType": "boolean",
+        "modifiers": []
+      },
+      {
+        "name": "createTempFile",
+        "signature": "createTempFile(String prefix,\n String suffix)",
+        "description": "Creates an empty file in the default temporary-file directory, using\n the given prefix and suffix to generate its name.",
+        "parameters": [],
+        "returnType": "static File",
+        "modifiers": []
+      },
+      {
+        "name": "createTempFile",
+        "signature": "createTempFile(String prefix,\n String suffix,\n File directory)",
+        "description": "Creates a new empty file in the specified directory, using the\n given prefix and suffix strings to generate its name.",
+        "parameters": [],
+        "returnType": "static File",
+        "modifiers": []
+      },
+      {
+        "name": "delete",
+        "signature": "delete()",
+        "description": "Deletes the file or directory denoted by this abstract pathname.",
+        "parameters": [],
+        "returnType": "boolean",
+        "modifiers": []
+      },
+      {
+        "name": "deleteOnExit",
+        "signature": "deleteOnExit()",
+        "description": "Requests that the file or directory denoted by this abstract\n pathname be deleted when the virtual machine terminates.",
+        "parameters": [],
+        "returnType": "void",
+        "modifiers": []
+      },
+      {
+        "name": "equals",
+        "signature": "equals(Object obj)",
+        "description": "Tests this abstract pathname for equality with the given object.",
+        "parameters": [],
+        "returnType": "boolean",
+        "modifiers": []
+      },
+      {
+        "name": "exists",
+        "signature": "exists()",
+        "description": "Tests whether the file or directory denoted by this abstract pathname\n exists.",
+        "parameters": [],
+        "returnType": "boolean",
+        "modifiers": []
+      },
+      {
+        "name": "getAbsoluteFile",
+        "signature": "getAbsoluteFile()",
+        "description": "Returns the absolute form of this abstract pathname.",
+        "parameters": [],
+        "returnType": "File",
+        "modifiers": []
+      },
+      {
+        "name": "getAbsolutePath",
+        "signature": "getAbsolutePath()",
+        "description": "Returns the absolute pathname string of this abstract pathname.",
+        "parameters": [],
+        "returnType": "String",
+        "modifiers": []
+      },
+      {
+        "name": "getCanonicalFile",
+        "signature": "getCanonicalFile()",
+        "description": "Returns the canonical form of this abstract pathname.",
+        "parameters": [],
+        "returnType": "File",
+        "modifiers": []
+      },
+      {
+        "name": "getCanonicalPath",
+        "signature": "getCanonicalPath()",
+        "description": "Returns the canonical pathname string of this abstract pathname.",
+        "parameters": [],
+        "returnType": "String",
+        "modifiers": []
+      },
+      {
+        "name": "getFreeSpace",
+        "signature": "getFreeSpace()",
+        "description": "Returns the number of unallocated bytes in the partition named by this abstract path name.",
+        "parameters": [],
+        "returnType": "long",
+        "modifiers": []
+      },
+      {
+        "name": "getName",
+        "signature": "getName()",
+        "description": "Returns the name of the file or directory denoted by this abstract\n pathname.",
+        "parameters": [],
+        "returnType": "String",
+        "modifiers": []
+      },
+      {
+        "name": "getParent",
+        "signature": "getParent()",
+        "description": "Returns the pathname string of this abstract pathname's parent, or\n null if this pathname does not name a parent directory.",
+        "parameters": [],
+        "returnType": "String",
+        "modifiers": []
+      },
+      {
+        "name": "getParentFile",
+        "signature": "getParentFile()",
+        "description": "Returns the abstract pathname of this abstract pathname's parent,\n or null if this pathname does not name a parent\n directory.",
+        "parameters": [],
+        "returnType": "File",
+        "modifiers": []
+      },
+      {
+        "name": "getPath",
+        "signature": "getPath()",
+        "description": "Converts this abstract pathname into a pathname string.",
+        "parameters": [],
+        "returnType": "String",
+        "modifiers": []
+      },
+      {
+        "name": "getTotalSpace",
+        "signature": "getTotalSpace()",
+        "description": "Returns the size of the partition named by this\n abstract pathname.",
+        "parameters": [],
+        "returnType": "long",
+        "modifiers": []
+      },
+      {
+        "name": "getUsableSpace",
+        "signature": "getUsableSpace()",
+        "description": "Returns the number of bytes available to this virtual machine on the\n partition named by this abstract pathname.",
+        "parameters": [],
+        "returnType": "long",
+        "modifiers": []
+      },
+      {
+        "name": "hashCode",
+        "signature": "hashCode()",
+        "description": "Computes a hash code for this abstract pathname.",
+        "parameters": [],
+        "returnType": "int",
+        "modifiers": []
+      },
+      {
+        "name": "isAbsolute",
+        "signature": "isAbsolute()",
+        "description": "Tests whether this abstract pathname is absolute.",
+        "parameters": [],
+        "returnType": "boolean",
+        "modifiers": []
+      },
+      {
+        "name": "isDirectory",
+        "signature": "isDirectory()",
+        "description": "Tests whether the file denoted by this abstract pathname is a\n directory.",
+        "parameters": [],
+        "returnType": "boolean",
+        "modifiers": []
+      },
+      {
+        "name": "isFile",
+        "signature": "isFile()",
+        "description": "Tests whether the file denoted by this abstract pathname is a normal\n file.",
+        "parameters": [],
+        "returnType": "boolean",
+        "modifiers": []
+      },
+      {
+        "name": "isHidden",
+        "signature": "isHidden()",
+        "description": "Tests whether the file named by this abstract pathname is a hidden\n file.",
+        "parameters": [],
+        "returnType": "boolean",
+        "modifiers": []
+      },
+      {
+        "name": "lastModified",
+        "signature": "lastModified()",
+        "description": "Returns the time that the file denoted by this abstract pathname was\n last modified.",
+        "parameters": [],
+        "returnType": "long",
+        "modifiers": []
+      },
+      {
+        "name": "length",
+        "signature": "length()",
+        "description": "Returns the length of the file denoted by this abstract pathname.",
+        "parameters": [],
+        "returnType": "long",
+        "modifiers": []
+      },
+      {
+        "name": "list",
+        "signature": "list()",
+        "description": "Returns an array of strings naming the files and directories in the\n directory denoted by this abstract pathname.",
+        "parameters": [],
+        "returnType": "String[]",
+        "modifiers": []
+      },
+      {
+        "name": "list",
+        "signature": "list(FilenameFilter filter)",
+        "description": "Returns an array of strings naming the files and directories in the\n directory denoted by this abstract pathname that satisfy the specified\n filter.",
+        "parameters": [],
+        "returnType": "String[]",
+        "modifiers": []
+      },
+      {
+        "name": "listFiles",
+        "signature": "listFiles()",
+        "description": "Returns an array of abstract pathnames denoting the files in the\n directory denoted by this abstract pathname.",
+        "parameters": [],
+        "returnType": "File[]",
+        "modifiers": []
+      },
+      {
+        "name": "listFiles",
+        "signature": "listFiles(FileFilter filter)",
+        "description": "Returns an array of abstract pathnames denoting the files and\n directories in the directory denoted by this abstract pathname that\n satisfy the specified filter.",
+        "parameters": [],
+        "returnType": "File[]",
+        "modifiers": []
+      },
+      {
+        "name": "listFiles",
+        "signature": "listFiles(FilenameFilter filter)",
+        "description": "Returns an array of abstract pathnames denoting the files and\n directories in the directory denoted by this abstract pathname that\n satisfy the specified filter.",
+        "parameters": [],
+        "returnType": "File[]",
+        "modifiers": []
+      },
+      {
+        "name": "listRoots",
+        "signature": "listRoots()",
+        "description": "List the available filesystem roots.",
+        "parameters": [],
+        "returnType": "static File[]",
+        "modifiers": []
+      },
+      {
+        "name": "mkdir",
+        "signature": "mkdir()",
+        "description": "Creates the directory named by this abstract pathname.",
+        "parameters": [],
+        "returnType": "boolean",
+        "modifiers": []
+      },
+      {
+        "name": "mkdirs",
+        "signature": "mkdirs()",
+        "description": "Creates the directory named by this abstract pathname, including any\n necessary but nonexistent parent directories.",
+        "parameters": [],
+        "returnType": "boolean",
+        "modifiers": []
+      },
+      {
+        "name": "renameTo",
+        "signature": "renameTo(File dest)",
+        "description": "Renames the file denoted by this abstract pathname.",
+        "parameters": [],
+        "returnType": "boolean",
+        "modifiers": []
+      },
+      {
+        "name": "setExecutable",
+        "signature": "setExecutable(boolean executable)",
+        "description": "A convenience method to set the owner's execute permission for this\n abstract pathname.",
+        "parameters": [],
+        "returnType": "boolean",
+        "modifiers": []
+      },
+      {
+        "name": "setExecutable",
+        "signature": "setExecutable(boolean executable,\n boolean ownerOnly)",
+        "description": "Sets the owner's or everybody's execute permission for this abstract\n pathname.",
+        "parameters": [],
+        "returnType": "boolean",
+        "modifiers": []
+      },
+      {
+        "name": "setLastModified",
+        "signature": "setLastModified(long time)",
+        "description": "Sets the last-modified time of the file or directory named by this\n abstract pathname.",
+        "parameters": [],
+        "returnType": "boolean",
+        "modifiers": []
+      },
+      {
+        "name": "setReadable",
+        "signature": "setReadable(boolean readable)",
+        "description": "A convenience method to set the owner's read permission for this abstract\n pathname.",
+        "parameters": [],
+        "returnType": "boolean",
+        "modifiers": []
+      },
+      {
+        "name": "setReadable",
+        "signature": "setReadable(boolean readable,\n boolean ownerOnly)",
+        "description": "Sets the owner's or everybody's read permission for this abstract\n pathname.",
+        "parameters": [],
+        "returnType": "boolean",
+        "modifiers": []
+      },
+      {
+        "name": "setReadOnly",
+        "signature": "setReadOnly()",
+        "description": "Marks the file or directory named by this abstract pathname so that\n only read operations are allowed.",
+        "parameters": [],
+        "returnType": "boolean",
+        "modifiers": []
+      },
+      {
+        "name": "setWritable",
+        "signature": "setWritable(boolean writable)",
+        "description": "A convenience method to set the owner's write permission for this abstract\n pathname.",
+        "parameters": [],
+        "returnType": "boolean",
+        "modifiers": []
+      },
+      {
+        "name": "setWritable",
+        "signature": "setWritable(boolean writable,\n boolean ownerOnly)",
+        "description": "Sets the owner's or everybody's write permission for this abstract\n pathname.",
+        "parameters": [],
+        "returnType": "boolean",
+        "modifiers": []
+      },
+      {
+        "name": "toPath",
+        "signature": "toPath()",
+        "description": "Returns a java.nio.file.Path object constructed from\n this abstract path.",
+        "parameters": [],
+        "returnType": "Path",
+        "modifiers": []
+      },
+      {
+        "name": "toString",
+        "signature": "toString()",
+        "description": "Returns the pathname string of this abstract pathname.",
+        "parameters": [],
+        "returnType": "String",
+        "modifiers": []
+      },
+      {
+        "name": "toURI",
+        "signature": "toURI()",
+        "description": "Constructs a file: URI that represents this abstract pathname.",
+        "parameters": [],
+        "returnType": "URI",
+        "modifiers": []
+      },
+      {
+        "name": "toURL",
+        "signature": "toURL()",
+        "description": "Deprecated.\nThis method does not automatically escape characters that\n are illegal in URLs.",
+        "parameters": [],
+        "returnType": "URL",
+        "modifiers": []
+      }
+    ],
+    "constructors": [
+      {
+        "name": "File",
+        "signature": "File(File parent,\n String child)",
+        "description": "Creates a new File instance from a parent abstract\n pathname and a child pathname string.",
+        "parameters": [],
+        "returnType": "",
+        "modifiers": [
+          "public"
+        ]
+      },
+      {
+        "name": "File",
+        "signature": "File(String pathname)",
+        "description": "Creates a new File instance by converting the given\n pathname string into an abstract pathname.",
+        "parameters": [],
+        "returnType": "",
+        "modifiers": [
+          "public"
+        ]
+      },
+      {
+        "name": "File",
+        "signature": "File(String parent,\n String child)",
+        "description": "Creates a new File instance from a parent pathname string\n and a child pathname string.",
+        "parameters": [],
+        "returnType": "",
+        "modifiers": [
+          "public"
+        ]
+      },
+      {
+        "name": "File",
+        "signature": "File(URI uri)",
+        "description": "Creates a new File instance by converting the given\n file: URI into an abstract pathname.",
+        "parameters": [],
+        "returnType": "",
+        "modifiers": [
+          "public"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "name": "pathSeparator",
+        "type": "static final String",
+        "description": "The system-dependent path-separator character, represented as a string\n for convenience.",
+        "modifiers": [
+          "static",
+          "final"
+        ]
+      },
+      {
+        "name": "pathSeparatorChar",
+        "type": "static final char",
+        "description": "The system-dependent path-separator character.",
+        "modifiers": [
+          "static",
+          "final"
+        ]
+      },
+      {
+        "name": "separator",
+        "type": "static final String",
+        "description": "The system-dependent default name-separator character, represented as a\n string for convenience.",
+        "modifiers": [
+          "static",
+          "final"
+        ]
+      },
+      {
+        "name": "separatorChar",
+        "type": "static final char",
+        "description": "The system-dependent default name-separator character.",
+        "modifiers": [
+          "static",
+          "final"
+        ]
+      }
+    ],
+    "examples": [],
+    "officialUrl": "https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/File.html",
+    "scrapedAt": "2025-10-23T23:51:19.513Z"
+  },
+  {
+    "className": "FileReader",
+    "packageName": "java.io",
+    "description": "Reads text from character files using a default buffer size. Decoding from bytes\n to characters uses either a specified charset\n or the platform's\n default charset.\n\n \n The FileReader is meant for reading streams of characters. For reading\n streams of raw bytes, consider using a FileInputStream.",
+    "methods": [],
+    "constructors": [
+      {
+        "name": "FileReader",
+        "signature": "FileReader(File file)",
+        "description": "Creates a new FileReader, given the File to read,\n using the platform's\n default charset.",
+        "parameters": [],
+        "returnType": "",
+        "modifiers": [
+          "public"
+        ]
+      },
+      {
+        "name": "FileReader",
+        "signature": "FileReader(FileDescriptor fd)",
+        "description": "Creates a new FileReader, given the FileDescriptor to read,\n using the platform's\n default charset.",
+        "parameters": [],
+        "returnType": "",
+        "modifiers": [
+          "public"
+        ]
+      },
+      {
+        "name": "FileReader",
+        "signature": "FileReader(File file,\n Charset charset)",
+        "description": "Creates a new FileReader, given the File to read and\n the charset.",
+        "parameters": [],
+        "returnType": "",
+        "modifiers": [
+          "public"
+        ]
+      },
+      {
+        "name": "FileReader",
+        "signature": "FileReader(String fileName)",
+        "description": "Creates a new FileReader, given the name of the file to read,\n using the platform's\n default charset.",
+        "parameters": [],
+        "returnType": "",
+        "modifiers": [
+          "public"
+        ]
+      },
+      {
+        "name": "FileReader",
+        "signature": "FileReader(String fileName,\n Charset charset)",
+        "description": "Creates a new FileReader, given the name of the file to read\n and the charset.",
+        "parameters": [],
+        "returnType": "",
+        "modifiers": [
+          "public"
+        ]
+      }
+    ],
+    "fields": [],
+    "examples": [],
+    "officialUrl": "https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/FileReader.html",
+    "scrapedAt": "2025-10-23T23:51:20.731Z"
+  },
+  {
+    "className": "BufferedReader",
+    "packageName": "java.io",
+    "description": "Reads text from a character-input stream, buffering characters so as to\n provide for the efficient reading of characters, arrays, and lines.\n\n  The buffer size may be specified, or the default size may be used.  The\n default is large enough for most purposes.\n\n  In general, each read request made of a Reader causes a corresponding\n read request to be made of the underlying character or byte stream.  It is\n therefore advisable to wrap a BufferedReader around any Reader whose read()\n operations may be costly, such as FileReaders and InputStreamReaders.  For\n example,\n\n  BufferedReader in\n   = new BufferedReader(new FileReader(\"foo.in\"));\n \n\n will buffer the input from the specified file.  Without buffering, each\n invocation of read() or readLine() could cause bytes to be read from the\n file, converted into characters, and then returned, which can be very\n inefficient.\n\n  Programs that use DataInputStreams for textual input can be localized by\n replacing each DataInputStream with an appropriate BufferedReader.",
+    "methods": [
+      {
+        "name": "close",
+        "signature": "close()",
+        "description": "Closes the stream and releases any system resources associated with\n it.",
+        "parameters": [],
+        "returnType": "void",
+        "modifiers": []
+      },
+      {
+        "name": "lines",
+        "signature": "lines()",
+        "description": "Returns a Stream, the elements of which are lines read from\n this BufferedReader.",
+        "parameters": [],
+        "returnType": "Stream<String>",
+        "modifiers": []
+      },
+      {
+        "name": "mark",
+        "signature": "mark(int readAheadLimit)",
+        "description": "Marks the present position in the stream.",
+        "parameters": [],
+        "returnType": "void",
+        "modifiers": []
+      },
+      {
+        "name": "markSupported",
+        "signature": "markSupported()",
+        "description": "Tells whether this stream supports the mark() operation, which it does.",
+        "parameters": [],
+        "returnType": "boolean",
+        "modifiers": []
+      },
+      {
+        "name": "read",
+        "signature": "read()",
+        "description": "Reads a single character.",
+        "parameters": [],
+        "returnType": "int",
+        "modifiers": []
+      },
+      {
+        "name": "read",
+        "signature": "read(char[] cbuf,\n int off,\n int len)",
+        "description": "Reads characters into a portion of an array.",
+        "parameters": [],
+        "returnType": "int",
+        "modifiers": []
+      },
+      {
+        "name": "readLine",
+        "signature": "readLine()",
+        "description": "Reads a line of text.",
+        "parameters": [],
+        "returnType": "String",
+        "modifiers": []
+      },
+      {
+        "name": "ready",
+        "signature": "ready()",
+        "description": "Tells whether this stream is ready to be read.",
+        "parameters": [],
+        "returnType": "boolean",
+        "modifiers": []
+      },
+      {
+        "name": "reset",
+        "signature": "reset()",
+        "description": "Resets the stream to the most recent mark.",
+        "parameters": [],
+        "returnType": "void",
+        "modifiers": []
+      }
+    ],
+    "constructors": [
+      {
+        "name": "BufferedReader",
+        "signature": "BufferedReader(Reader in)",
+        "description": "Creates a buffering character-input stream that uses a default-sized\n input buffer.",
+        "parameters": [],
+        "returnType": "",
+        "modifiers": [
+          "public"
+        ]
+      },
+      {
+        "name": "BufferedReader",
+        "signature": "BufferedReader(Reader in,\n int sz)",
+        "description": "Creates a buffering character-input stream that uses an input buffer of\n the specified size.",
+        "parameters": [],
+        "returnType": "",
+        "modifiers": [
+          "public"
+        ]
+      }
+    ],
+    "fields": [],
+    "examples": [
+      "BufferedReader in\n   = new BufferedReader(new FileReader(\"foo.in\"));"
+    ],
+    "officialUrl": "https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/BufferedReader.html",
+    "scrapedAt": "2025-10-23T23:51:21.786Z"
+  }
+]
