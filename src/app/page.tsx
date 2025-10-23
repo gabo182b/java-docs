@@ -1,4 +1,4 @@
-import { ChatInterface } from "@/components"
+import { ChatInterface } from "@/components";
 
 export default function Home() {
   return (
@@ -9,7 +9,15 @@ export default function Home() {
 }
 
 export const metadata = {
-  title: 'Java Documentation Chatbot',
-  description: 'Ask questions about Java and get instant answers with code examples',
-  keywords: ['Java', 'Programming', 'Documentation', 'AI', 'Learning', 'Tutorial']
+  title: "Java Documentation Chatbot",
+  description:
+    "Ask questions about Java and get instant answers with code examples",
+  keywords: [
+    "Java",
+    "Programming",
+    "Documentation",
+    "AI",
+    "Learning",
+    "Tutorial",
+  ],
 };

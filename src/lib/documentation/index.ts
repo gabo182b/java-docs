@@ -1,2 +1,2 @@
-export * from "./scraper"
-export * from "./search"
+export * from "./scraper";
+export * from "./search";

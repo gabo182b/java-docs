@@ -1,23 +1,25 @@
-'use client'
+"use client";
 
-import { useChat } from 'ai/react'
-import { MessageBubble } from './MessageBubble'
-import { Button } from './ui/Button'
-import { Input } from './ui/Input'
-import { Send, Coffee, AlertCircle } from 'lucide-react';
-import { useState } from 'react'
-
+import { useChat } from "ai/react";
+import { MessageBubble } from "./MessageBubble";
+import { Button } from "./ui/Button";
+import { Input } from "./ui/Input";
+import { Send, Coffee, AlertCircle } from "lucide-react";
+import { useState } from "react";
 
 export function ChatInterface() {
-  const [error, setError] = useState<string | null>(null)
+  const [error, setError] = useState<string | null>(null);
 
-  const {messages, input, handleInputChange, handleSubmit, isLoading} = useChat({
-    api: '/api/chat',
-    onError: (error) => {
-      console.error('Chat error:', error);
-      setError('Failed to send message. Please check your API key and try again.');
-    },
-  });
+  const { messages, input, handleInputChange, handleSubmit, isLoading } =
+    useChat({
+      api: "/api/chat",
+      onError: (error) => {
+        console.error("Chat error:", error);
+        setError(
+          "Failed to send message. Please check your API key and try again.",
+        );
+      },
+    });
 
   const clearError = () => {
     setError(null);
@@ -69,8 +71,14 @@ export function ChatInterface() {
               <div className="bg-white rounded-lg p-4 border shadow-sm flex items-center space-x-2">
                 <div className="flex space-x-1">
                   <div className="w-2 h-2 bg-orange-400 rounded-full animate-bounce"></div>
-                  <div className="w-2 h-2 bg-orange-400 rounded-full animate-bounce" style={{animationDelay: '0.1s'}}></div>
-                  <div className="w-2 h-2 bg-orange-400 rounded-full animate-bounce" style={{animationDelay: '0.2s'}}></div>
+                  <div
+                    className="w-2 h-2 bg-orange-400 rounded-full animate-bounce"
+                    style={{ animationDelay: "0.1s" }}
+                  ></div>
+                  <div
+                    className="w-2 h-2 bg-orange-400 rounded-full animate-bounce"
+                    style={{ animationDelay: "0.2s" }}
+                  ></div>
                 </div>
                 <span className="text-sm text-black ml-2">Thinking...</span>
               </div>
@@ -81,7 +89,10 @@ export function ChatInterface() {
 
       {/* Input */}
       <footer className="border-t bg-white/80 backdrop-blur-sm p-4">
-        <form onSubmit={handleSubmit} className="max-w-5xl mx-auto px-4 flex space-x-3">
+        <form
+          onSubmit={handleSubmit}
+          className="max-w-5xl mx-auto px-4 flex space-x-3"
+        >
           <Input
             value={input}
             onChange={handleInputChange}

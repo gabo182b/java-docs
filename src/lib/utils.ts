@@ -1,38 +1,38 @@
-import { ClassValue, clsx } from "clsx"
-import { twMerge } from "tailwind-merge"
-import { ContentBlock } from "./types"
+import { ClassValue, clsx } from "clsx";
+import { twMerge } from "tailwind-merge";
+import { ContentBlock } from "./types";
 
 export function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs))
+  return twMerge(clsx(inputs));
 }
 
 export function extractCodeBlocks(content: string): ContentBlock[] {
-  const blocks: ContentBlock[] = []
-  const parts = content.split(/(```[\s\S]*?```)/)
+  const blocks: ContentBlock[] = [];
+  const parts = content.split(/(```[\s\S]*?```)/);
 
   parts.forEach((part) => {
-    if (part.startsWith('```') && part.endsWith('```')) {
-      const codeContent = part.slice(3, -3)
-      const lines = codeContent.split('\n')
-      const language = lines[0].trim() || 'java'
-      const code = lines.slice(1).join('\n')
+    if (part.startsWith("```") && part.endsWith("```")) {
+      const codeContent = part.slice(3, -3);
+      const lines = codeContent.split("\n");
+      const language = lines[0].trim() || "java";
+      const code = lines.slice(1).join("\n");
 
       blocks.push({
-        type: 'code',
-        
+        type: "code",
+
         content: code,
-        language: language
-      })
+        language: language,
+      });
     } else if (part.trim()) {
       blocks.push({
-        type: 'text',
-        content: part
-      })
+        type: "text",
+        content: part,
+      });
     }
-  })
+  });
 
-  return blocks
-  }
+  return blocks;
+}
 
 export const javaConvertationStarters = [
   "What is the difference between ArrayList and LinkedList?",
@@ -42,5 +42,5 @@ export const javaConvertationStarters = [
   "How to handle exceptions in Java?",
   "What is the difference between abstract classes and interfaces?",
   "How do I read a file in Java?",
-  "Explain Java collections framework"
-]
+  "Explain Java collections framework",
+];
