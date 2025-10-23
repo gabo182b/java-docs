@@ -13,6 +13,9 @@ on:
     branches:
       - develop
 
+permissions:
+  contents: write
+
 jobs:
   scrape-and-Update:
     runs-on: ubuntu-latest
