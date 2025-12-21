@@ -290,7 +290,7 @@
       "List list = Collections.synchronizedList(new ArrayList(...));"
     ],
     "officialUrl": "https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/ArrayList.html",
-    "scrapedAt": "2025-12-14T03:24:13.170Z"
+    "scrapedAt": "2025-12-21T03:24:27.280Z"
   },
   {
     "className": "HashMap",
@@ -483,7 +483,7 @@
       "map.computeIfAbsent(key, k -> new HashSet<V>()).add(v);"
     ],
     "officialUrl": "https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/HashMap.html",
-    "scrapedAt": "2025-12-14T03:24:14.226Z"
+    "scrapedAt": "2025-12-21T03:24:28.341Z"
   },
   {
     "className": "HashSet",
@@ -626,7 +626,7 @@
       "Set s = Collections.synchronizedSet(new HashSet(...));"
     ],
     "officialUrl": "https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/HashSet.html",
-    "scrapedAt": "2025-12-14T03:24:15.284Z"
+    "scrapedAt": "2025-12-21T03:24:29.438Z"
   },
   {
     "className": "LinkedList",
@@ -982,7 +982,7 @@
       "String[] y = x.toArray(new String[0]);"
     ],
     "officialUrl": "https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/LinkedList.html",
-    "scrapedAt": "2025-12-14T03:24:16.358Z"
+    "scrapedAt": "2025-12-21T03:24:30.729Z"
   },
   {
     "className": "String",
@@ -1814,7 +1814,7 @@
       "List<String> strings = List.of(\"Java\", \"is\", \"cool\");\n     String message = String.join(\" \", strings);\n     // message returned is: \"Java is cool\"\n\n     Set<String> strings =\n         new LinkedHashSet<>(List.of(\"Java\", \"is\", \"very\", \"cool\"));\n     String message = String.join(\"-\", strings);\n     // message returned is: \"Java-is-very-cool\""
     ],
     "officialUrl": "https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html",
-    "scrapedAt": "2025-12-14T03:24:17.457Z"
+    "scrapedAt": "2025-12-21T03:24:32.007Z"
   },
   {
     "className": "Integer",
@@ -2303,7 +2303,7 @@
       "Integer result = getInteger(nm, null);\n return (result == null) ? new Integer(val) : result;"
     ],
     "officialUrl": "https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Integer.html",
-    "scrapedAt": "2025-12-14T03:24:18.543Z"
+    "scrapedAt": "2025-12-21T03:24:33.052Z"
   },
   {
     "className": "Object",
@@ -2416,7 +2416,7 @@
       "@Override\n     protected void finalize() throws Throwable {\n         try {\n             ... // cleanup subclass state\n         } finally {\n             super.finalize();\n         }\n     }"
     ],
     "officialUrl": "https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html",
-    "scrapedAt": "2025-12-14T03:24:19.654Z"
+    "scrapedAt": "2025-12-21T03:24:34.079Z"
   },
   {
     "className": "File",
@@ -2906,7 +2906,7 @@
     ],
     "examples": [],
     "officialUrl": "https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/File.html",
-    "scrapedAt": "2025-12-14T03:24:20.752Z"
+    "scrapedAt": "2025-12-21T03:24:35.155Z"
   },
   {
     "className": "FileReader",
@@ -2968,7 +2968,7 @@
     "fields": [],
     "examples": [],
     "officialUrl": "https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/FileReader.html",
-    "scrapedAt": "2025-12-14T03:24:21.860Z"
+    "scrapedAt": "2025-12-21T03:24:36.201Z"
   },
   {
     "className": "BufferedReader",
@@ -3075,6 +3075,6 @@
       "BufferedReader in\n   = new BufferedReader(new FileReader(\"foo.in\"));"
     ],
     "officialUrl": "https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/BufferedReader.html",
-    "scrapedAt": "2025-12-14T03:24:23.199Z"
+    "scrapedAt": "2025-12-21T03:24:37.251Z"
   }
 ]
